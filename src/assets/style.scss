@@ -9,7 +9,7 @@
 *
 *
 
-  color / $white
+  color / $black
   font / @import 
   general / html
   dropdown / .dropdown-custom.btn
@@ -43,17 +43,17 @@
 
 /*color*/
 
-$white: #131313;
+$black: #131313;
 $gray: #333;
-$black: #E7E9EA;
+$white: #E7E9EA;
 $general: #131313;
-$black_soft: #333;
-$black_col: #2e333c;
-$black_more: #0f0f0f;
+$white_soft: #333;
+$white_col: #2e333c;
+$white_more: #0f0f0f;
 $color: #03FFB3;
-$color_more: #403f83;
+$color_more: #000;
 .col-white {
-    color: $white;
+    color: $black;
 }
 
 
@@ -75,6 +75,7 @@ body {
     word-spacing: 0px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #131313;
 }
 
 #routerhang {
@@ -102,17 +103,17 @@ section {
     &.no-bottom {
         padding-bottom: 0 !important;
     }
-    .small-border {
-        display: block;
-        width: 50px;
-        height: 2px;
-        background: $color;
-        border-left: none;
-        border-left-color: currentcolor;
-        border-right: none;
-        border-right-color: currentcolor;
-        margin: 18px auto 30px;
-    }
+    // .small-border {
+    //     display: block;
+    //     width: 50px;
+    //     height: 2px;
+    //     background: $color;
+    //     border-left: none;
+    //     border-left-color: currentcolor;
+    //     border-right: none;
+    //     border-right-color: currentcolor;
+    //     margin: 18px auto 30px;
+    // }
     &.bg-gray {
         background: rgb(247, 244, 253);
     }
@@ -154,12 +155,12 @@ section {
 }
 
 .white {
-    color: $black;
-    background: $white;
+    color: $white;
+    background: $black;
 }
 
 .black_more {
-    background: $black_more;
+    background: $white_more;
 }
 
 .color {
@@ -170,7 +171,7 @@ section {
     position: relative;
     overflow: hidden;
     font-size: 11pt;
-    color: $white;
+    color: $black;
     background: none;
     border: 2px solid $color;
     border-radius: 0;
@@ -179,7 +180,7 @@ section {
     transition-delay: 0s;
     z-index: 0;
     span {
-        color: $white;
+        color: $black;
         position: relative;
         z-index: 1;
     }
@@ -776,7 +777,7 @@ p.lead {
         margin-right: 15px;
         &.white {
             color: $color_more !important;
-            background: $white;
+            background: $black;
         }
     }
 }
@@ -823,7 +824,7 @@ a {
 .dropdown-toggle::after {
     font-family: FontAwesome;
     content: "\f078";
-    color: rgba(0, 0, 0, .5);
+    color: rgb(3 254 178);
     padding-left: 2px;
     font-size: 8px;
     top: -1px;
@@ -836,7 +837,7 @@ a {
 .item-dropdown {
     width: max-content;
     position: absolute;
-    background: $white;
+    background: $black;
     border-radius: 5px;
     overflow: hidden;
     inset: 50px auto auto 0;
@@ -849,7 +850,7 @@ a {
         position: relative;
         text-align: center;
         a {
-            color: $black_soft !important;
+            color: $white_soft !important;
             text-transform: none;
             font-weight: normal;
             letter-spacing: normal;
@@ -860,7 +861,7 @@ a {
             width: 100%;
             text-align: left;
             &:hover {
-                color: $white !important;
+                color: $black !important;
                 background: $color;
             }
             &:last-child {
@@ -900,10 +901,10 @@ a {
     transition: all 0.6s ease;
     &.white {
         a {
-            color: $black;
+            color: $white;
         }
         .btn {
-            color: $black;
+            color: $white;
             .lines {
                 top: 24px;
             }
@@ -922,7 +923,7 @@ a {
         font-weight: 800;
         padding: 0 5px 0 0;
         text-decoration: none !important;
-        color: $white;
+        color: $black;
         outline: none;
         transition: all 0.3s ease;
         &:hover {
@@ -1082,21 +1083,21 @@ a {
             width: 100%;
             height: 2px;
             top: 0px;
-            background-color: $black;
+            background-color: $white;
         }
         .menu-line1 {
             position: absolute;
             width: 100%;
             height: 2px;
             top: 5px;
-            background-color: $black;
+            background-color: $white;
         }
         .menu-line2 {
             position: absolute;
             width: 100%;
             height: 2px;
             top: 10px;
-            background-color: $black;
+            background-color: $white;
         }
         &.sticky {
             position: absolute !important;
@@ -1128,12 +1129,12 @@ a {
         border-bottom: solid 1px #1b1b1b;
         transition: all 0.6s ease;
         &.white {
-            background: $white;
+            background: $black;
             .btn {
-                color: $black;
+                color: $white;
             }
             a {
-                color: $black;
+                color: $white;
             }
         }
     }
@@ -1300,7 +1301,7 @@ a {
     overflow: hidden;
     font-size: 11pt;
     letter-spacing: 1px;
-    color: $white;
+    color: $black;
     border: 2px solid $color;
     background: none;
     border-radius: 0;
@@ -1546,7 +1547,7 @@ a {
         position: absolute;
         top: 0;
         left: 0;
-        background: linear-gradient(to bottom, $black, rgba(0, 0, 0, .1));
+        background: linear-gradient(to bottom, $white, rgba(0, 0, 0, .1));
         opacity: .5;
     }
     &.no-bg::before {
@@ -1556,10 +1557,10 @@ a {
         padding: 130px 0 110px;
         h1 {
             margin-bottom: 0;
-            color: $white;
+            color: $black;
         }
         p {
-            color: $white;
+            color: $black;
             margin-top: 15px;
         }
         .list {
@@ -1574,7 +1575,7 @@ a {
                 padding: 0 10px;
             }
             .link {
-                color: $white;
+                color: $black;
                 font-weight: 500;
                 line-height: 1.3;
                 letter-spacing: 1px;
@@ -1858,7 +1859,7 @@ footer {
                     color: #595d69;
                     i {
                         text-shadow: none;
-                        color: $black;
+                        color: $white;
                         //background: $color_more;
                         padding: 12px 10px 8px 10px;
                         width: 34px;
@@ -1871,7 +1872,7 @@ footer {
                     }
                     &:hover i {
                         color: $color;
-                        //background: $white;
+                        //background: $black;
                         transition: .3s;
                     }
                 }
@@ -1940,7 +1941,7 @@ footer {
 /** portofolio **/
 
 .AppContainer {
-    color: $white;
+    color: $black;
     position: relative;
     z-index: 99;
     height: 100%;
@@ -1964,13 +1965,13 @@ footer {
 }
 
 .btnLright {
-    color: $white;
+    color: $black;
     font-size: 21px !important;
     right: 10px !important;
 }
 
 .btnLleft {
-    color: $white;
+    color: $black;
     font-size: 21px !important;
     left: 10px !important;
 }
@@ -1999,7 +2000,7 @@ footer {
         width: 100%;
         bottom: 15px;
         font-weight: 500;
-        color: $white;
+        color: $black;
         top: 0;
         left: 0;
         display: flex;
@@ -2067,7 +2068,7 @@ footer {
                 display: inline-block;
             }
             a {
-                color: $white;
+                color: $black;
                 text-decoration: none;
                 transition: all 0.3s ease;
                 &:hover {
@@ -2112,7 +2113,7 @@ footer {
         position: relative;
         overflow: hidden;
         font-size: 11pt;
-        color: $white;
+        color: $black;
         background: none;
         border: 2px solid $color;
         border-radius: 0;
@@ -2122,7 +2123,7 @@ footer {
         transition-delay: 0s;
         z-index: 0;
         span {
-            color: $white;
+            color: $black;
             position: relative;
             z-index: 3;
         }
@@ -2176,14 +2177,14 @@ footer {
     border-radius: 3px;
     background-color: rgb(242, 246, 254);
     &.text-light {
-        color: $white;
+        color: $black;
         background: $color_more;
         margin-bottom: 0;
         h3 {
-            color: $white;
+            color: $black;
         }
         .btn {
-            color: $white;
+            color: $black;
         }
     }
 }
@@ -2246,7 +2247,7 @@ address {
     .p-tagline,
     .p-title {
         background: $color_more;
-        color: $white;
+        color: $black;
         position: absolute;
         top: 20px;
         left: 20px;
@@ -2294,7 +2295,7 @@ address {
     background: none;
     padding: 15px 20px 15px 20px;
     border-radius: 0;
-    background: $white;
+    background: $black;
     cursor: pointer;
 }
 
@@ -2467,7 +2468,7 @@ address {
 #offer.active,
 #like.active {
     background: $color !important;
-    color: $white;
+    color: $black;
 }
 
 
@@ -2810,9 +2811,8 @@ i.font60 {
 }
 
 .nft_coll {
-    background: #ffffff;
     padding-bottom: 10px;
-    border: solid 1px #dddddd;
+    border: solid 1px #03ffb32b;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -2884,10 +2884,12 @@ i.font60 {
 .nft_coll h4 {
     font-size: 16px;
     margin-bottom: 0px;
+    color: #E7E9EA;
 }
 
 .nft_coll span {
     font-size: 14px;
+    color: $color;
 }
 
 .nft_coll p {
@@ -2902,7 +2904,7 @@ i.font60 {
     width: 100%;
     .slick-prev {
         left: -12px;
-        background: $white;
+        background: $black;
         border-radius: 45px;
         display: block;
         width: 45px;
@@ -2916,8 +2918,8 @@ i.font60 {
             font-family: FontAwesome !important;
             font-style: normal;
             font-weight: normal;
-            color: $black;
-            background: $white;
+            color: $white;
+            background: $black;
             border: 1px solid $gray;
             border-radius: 45px;
             display: block;
@@ -2926,13 +2928,13 @@ i.font60 {
             line-height: 45px;
         }
         &:hover {
-            background: $white;
+            background: $black;
             box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.2);
         }
     }
     .slick-next {
         right: -12px;
-        background: $white;
+        background: $black;
         border-radius: 45px;
         display: block;
         width: 45px;
@@ -2945,8 +2947,8 @@ i.font60 {
             font-family: FontAwesome !important;
             font-style: normal;
             font-weight: normal;
-            color: $black;
-            background: $white;
+            color: $white;
+            background: $black;
             border: 1px solid $gray;
             border-radius: 45px;
             display: block;
@@ -2955,7 +2957,7 @@ i.font60 {
             line-height: 45px;
         }
         &:hover {
-            background: $white;
+            background: $black;
             box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.2);
         }
     }
@@ -2975,7 +2977,7 @@ i.font60 {
             font-size: 1.3rem;
             display: inline-block;
             margin: 5px 15px 0 0;
-            color: $white;
+            color: $black;
             height: max-content;
         }
         p {
@@ -2991,10 +2993,10 @@ i.font60 {
         bottom: -40px;
         li.slick-active button::before {
             opacity: .75;
-            color: $white;
+            color: $black;
         }
         li button::before {
-            color: $white;
+            color: $black;
         }
     }
 }
@@ -3005,15 +3007,24 @@ i.font60 {
     position: relative;
     padding: 20px;
     margin: 10px;
-    border: solid 1px #ddd;
+    border: solid 1px rgba(255, 255, 255, .1);
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     margin-bottom: 25px;
-    background: #ffffff;
-    transition: .7s;
+    /* background: #ffffff; */
+    transition: 0.7s;
+    cursor: pointer;
     &:hover {
         box-shadow: 2px 2px 30px 0px rgba(10, 10, 10, 0.1);
+        transition: .7s;
+    }
+}
+
+.nft__item_preview {
+    transition: .7s;
+    &:hover {
+        transform: scale(1.04);
         transition: .7s;
     }
 }
@@ -3034,11 +3045,12 @@ i.font60 {
     font-size: 14px;
     font-weight: 600;
     display: block;
+    color: $color !important;
 }
 
 .nft__item_price span {
     margin-left: 10px;
-    color: $black;
+    color: $white;
     font-weight: 700;
 }
 
@@ -3192,7 +3204,7 @@ i.font60 {
             img {
                 padding: 1px;
                 background: $gray;
-                box-shadow: 0px 0px 0px 4px rgba(131, 100, 226, 1);
+                box-shadow: 0px 0px 0px 4px #03ffb3;
                 transition: .2s ease;
             }
         }
@@ -3205,10 +3217,10 @@ i.font60 {
         padding-left: 70px;
         span {
             cursor: pointer;
-            color: $black;
+            color: $white;
         }
         .bot {
-            color: $gray;
+            color: $color;
             display: block;
             font-size: 14px;
             font-weight: 400;
@@ -3231,7 +3243,6 @@ i.font60 {
 
 .icon-box.style-2 {
     border: none;
-    background: rgba(133, 100, 226, .1);
 }
 
 .text-light .icon-box {
@@ -3248,7 +3259,7 @@ i.font60 {
 
 .icon-box span {
     display: block;
-    color: #606060;
+    color: #fff;
     font-weight: bold;
     font-size: 14px;
     margin-top: 5px;
@@ -3270,9 +3281,8 @@ i.font60 {
     -moz-box-shadow: 5px 5px 30px 0px $color_more;
     box-shadow: 5px 5px 30px 0px $color_more;
     transition: .3s;
-    span,
     i {
-        color: $white;
+        color: $color;
     }
 }
 
@@ -3339,7 +3349,7 @@ i.font60 {
     width: 100%;
     .slick-prev {
         left: -25px;
-        background: $white !important;
+        background: $black !important;
         border-radius: 60px;
         display: block;
         width: 60px;
@@ -3353,7 +3363,7 @@ i.font60 {
             font-family: FontAwesome !important;
             font-style: normal;
             font-weight: normal;
-            color: $black;
+            color: $white;
             position: relative;
             left: 10px;
             line-height: 60px;
@@ -3361,7 +3371,7 @@ i.font60 {
     }
     .slick-next {
         right: -25px;
-        background: $white !important;
+        background: $black !important;
         border-radius: 60px;
         display: block;
         width: 60px;
@@ -3374,7 +3384,7 @@ i.font60 {
             font-family: FontAwesome !important;
             font-style: normal;
             font-weight: normal;
-            color: $black;
+            color: $white;
             position: relative;
             right: 10px;
             line-height: 60px;
@@ -3396,7 +3406,7 @@ i.font60 {
             font-size: 1.3rem;
             display: inline-block;
             margin: 5px 15px 0 0;
-            color: $white;
+            color: $black;
             height: max-content;
         }
         p {
@@ -3412,10 +3422,10 @@ i.font60 {
         bottom: -40px;
         li.slick-active button::before {
             opacity: .75;
-            color: $white;
+            color: $black;
         }
         li button::before {
-            color: $white;
+            color: $black;
         }
     }
 }
@@ -3610,7 +3620,7 @@ i.font60 {
     -webkit-border-radius: 3px;
     outline: none;
     &:hover {
-        color: $white;
+        color: $black;
         background: $color;
         border: 0;
     }
@@ -3652,7 +3662,7 @@ i.font60 {
             }
         }
         &.active span {
-            color: $white;
+            color: $black;
             background: $color_more;
         }
     }
@@ -3768,7 +3778,7 @@ img.img-rounded {
 .box-url {
     position: relative;
     padding: 30px;
-    background: $white;
+    background: $black;
     border: solid 1px rgba(0, 0, 0, .2);
     display: block;
     border-radius: 20px;
@@ -3850,7 +3860,7 @@ img.img-rounded {
 
 .box-login {
     padding: 40px;
-    background: $white;
+    background: $black;
     border-radius: 5px;
     p {
         color: $general !important;
@@ -4043,7 +4053,7 @@ img.img-rounded {
     }
     .nav-tabs .nav-item.show .nav-link,
     .nav-tabs .nav-link.active {
-        color: $white;
+        color: $black;
         background: $color_more;
         border-radius: 4px;
         border: 0;
@@ -4069,7 +4079,7 @@ img.img-rounded {
     }
     .nav-tabs .nav-item.show .nav-link,
     .nav-tabs .nav-link.active {
-        color: $white;
+        color: $black;
         background: $color_more;
         border-radius: 4px;
         border: 0;
@@ -4095,7 +4105,7 @@ img.img-rounded {
     }
     .nav-tabs .nav-item.show .nav-link,
     .nav-tabs .nav-link.active {
-        color: $white;
+        color: $black;
         background: $color_more;
         border-radius: 4px;
         border: 0;
@@ -4367,7 +4377,7 @@ img.img-rounded {
     li.active {
         span {
             border-color: $color;
-            color: $white;
+            color: $black;
             border-right: none;
             background: $color;
         }
@@ -4421,7 +4431,7 @@ img.img-rounded {
         box-shadow: unset;
         .dropdown {
             a {
-                color: $black !important;
+                color: $white !important;
                 padding: 10px 10px 10px 0px;
                 width: 100%;
                 text-align: left;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const authorlist= () => (
-  <div>
+  <div className='mb-5'>
     <ol className="author_list">
       <li>                                    
           <div className="author_list_pp">
