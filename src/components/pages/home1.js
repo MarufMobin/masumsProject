@@ -50,7 +50,6 @@ const homeone= () => (
        <Particle/>
          <SliderMainParticle/>
       </section>
-
       <section className='container'>
         <div className='row'>
           <div className='col-lg-12'>
@@ -60,10 +59,7 @@ const homeone= () => (
             </div>
           </div>
         </div>
-        
         <ColumnNew/>
-        
-        
       </section>
 
       <section className='container-fluid bg-gray'>

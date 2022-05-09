@@ -1,24 +1,43 @@
-.hero-section {
-    color: #E7E9EB;
-}
-
+//Global Css Here
 .custm-color-link {
     color: #03FFB3!important;
-}
-
-.custon-color-whilte-footer {
-    color: #fff;
-}
-
-#quick_search::placeholder,
-#txt_subscribe::placeholder {
-    color: #fff;
 }
 
 .custom-margin {
     margin-bottom: 40px;
 }
 
+.custm-mini-button {
+    display: block;
+    width: max-content;
+    text-align: center;
+    color: #000000 !important;
+    background: #03FFB3;
+    border-radius: 6px;
+    letter-spacing: normal;
+    outline: 0;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 6px 30px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 20px 0px rgb(131 100 226 / 0%);
+    transition: all 0.3s ease;
+}
+
+// Hero Section Code Here
+.hero-section {
+    color: #E7E9EB;
+}
+
+// Header and Footer Input Field Search Perpuss
+#quick_search::placeholder,
+#txt_subscribe::placeholder {
+    color: #fff;
+}
+
+//New Items Section Css 
 .nft__item_like span {
     color: #ffffff;
 }
@@ -31,4 +50,9 @@
     cursor: pointer;
     line-height: 28px;
     color: #E7E9EA;
+}
+
+//Footer Part Css Here
+.custon-color-whilte-footer {
+    color: #fff;
 }
