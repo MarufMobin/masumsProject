@@ -2,63 +2,63 @@ import React from 'react';
 import { Link } from '@reach/router';
 
 const footer= () => (
-  <footer className="footer-light">
+  <footer className="footer-light custm-footer-color">
             <div className="container">
                 <div className="row">
                     <div className="col-md-3 col-sm-6 col-xs-1">
                         <div className="widget">
-                            <h5>Marketplace</h5>
+                            <h5 className='custon-color-whilte-footer '>Marketplace</h5>
                             <ul>
-                                <li><Link to="">All NFTs</Link></li>
-                                <li><Link to="">Art</Link></li>
-                                <li><Link to="">Music</Link></li>
-                                <li><Link to="">Domain Names</Link></li>
-                                <li><Link to="">Virtual World</Link></li>
-                                <li><Link to="">Collectibles</Link></li>
+                                <li><Link to="" className="custm-color-link">All NFTs</Link></li>
+                                <li><Link to="" className="custm-color-link">Art</Link></li>
+                                <li><Link to="" className="custm-color-link">Music</Link></li>
+                                <li><Link to="" className="custm-color-link">Domain Names</Link></li>
+                                <li><Link to="" className="custm-color-link">Virtual World</Link></li>
+                                <li><Link to="" className="custm-color-link">Collectibles</Link></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-6 col-xs-1">
                         <div className="widget">
-                            <h5>Resources</h5>
+                            <h5 className='custon-color-whilte-footer '>Resources</h5>
                             <ul>
-                                <li><Link to="">Help Center</Link></li>
-                                <li><Link to="">Partners</Link></li>
-                                <li><Link to="">Suggestions</Link></li>
-                                <li><Link to="">Discord</Link></li>
-                                <li><Link to="">Docs</Link></li>
-                                <li><Link to="">Newsletter</Link></li>
+                                <li><Link to="" className="custm-color-link">Help Center</Link></li>
+                                <li><Link to="" className="custm-color-link">Partners</Link></li>
+                                <li><Link to="" className="custm-color-link">Suggestions</Link></li>
+                                <li><Link to="" className="custm-color-link">Discord</Link></li>
+                                <li><Link to="" className="custm-color-link">Docs</Link></li>
+                                <li><Link to="" className="custm-color-link">Newsletter</Link></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-6 col-xs-1">
                         <div className="widget">
-                            <h5>Community</h5>
+                            <h5 className='custon-color-whilte-footer '>Community</h5>
                             <ul>
-                                <li><Link to="">Community</Link></li>
-                                <li><Link to="">Documentation</Link></li>
-                                <li><Link to="">Brand Assets</Link></li>
-                                <li><Link to="">Blog</Link></li>
-                                <li><Link to="">Forum</Link></li>
-                                <li><Link to="">Mailing List</Link></li>
+                                <li><Link to="" className="custm-color-link">Community</Link></li>
+                                <li><Link to="" className="custm-color-link">Documentation</Link></li>
+                                <li><Link to="" className="custm-color-link">Brand Assets</Link></li>
+                                <li><Link to="" className="custm-color-link">Blog</Link></li>
+                                <li><Link to="" className="custm-color-link">Forum</Link></li>
+                                <li><Link to="" className="custm-color-link">Mailing List</Link></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-6 col-xs-1">
                         <div className="widget">
-                            <h5>Newsletter</h5>
-                            <p>Signup for our newsletter to get the latest news in your inbox.</p>
+                            <h5 className='custon-color-whilte-footer '>Newsletter</h5>
+                            <p className='custon-color-whilte-footer '>Signup for our newsletter to get the latest news in your inbox.</p>
                             <form action="#" className="row form-dark" id="form_subscribe" method="post" name="form_subscribe">
                                 <div className="col text-center">
                                     <input className="form-control" id="txt_subscribe" name="txt_subscribe" placeholder="enter your email" type="text" /> 
-                                    <Link to="" id="btn-subscribe">
+                                    <Link to="" className="custm-color-link" id="btn-subscribe">
                                       <i className="arrow_right bg-color-secondary"></i>
                                     </Link>
                                     <div className="clearfix"></div>
                                 </div>
                             </form>
                             <div className="spacer-10"></div>
-                            <small>Your email is safe with us. We don't spam.</small>
+                            <small className='custon-color-whilte-footer'>Your email is safe with us. We don't spam.</small>
                         </div>
                     </div>
                 </div>
@@ -70,9 +70,9 @@ const footer= () => (
                             <div className="de-flex">
                                 <div className="de-flex-col">
                                     <span onClick={()=> window.open("", "_self")}>
-                                        <img alt="" className="f-logo d-1" src="./img/logo.png" />
+                                        <img alt="" className="f-logo d-1" src="./img/blocpod-logo.svg" />
                                         <img alt="" className="f-logo d-3" src="./img/logo-2-light.png" />
-                                        <span className="copy">&copy; Copyright 2021 - Gigaland by Designesia</span>
+                                        <span className="copy custm-color-link">&copy; 2022 Blocpod. All Rights Reserved</span>
                                     </span>
                                 </div>
                                 <div className="de-flex-col">

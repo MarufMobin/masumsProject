@@ -99,7 +99,7 @@ const Header= function() {
               <div className='navbar-title navbar-item'>
                 <NavLink to="/">
                 <img
-                    src="./img/logo.png"
+                    src="./img/blocpod-logo.svg"
                     className="img-fluid d-block"
                     alt="#"
                   />

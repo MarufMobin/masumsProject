@@ -33,10 +33,10 @@ const slidermain= () => (
               </Reveal>
               <div className="spacer-10"></div>
               <Reveal className='onStep' keyframes={fadeInUp} delay={300} duration={600} triggerOnce>
-              <h1 className="">Create, sell or collect digital items.</h1>
+              <h1 className="hero-section">Create, sell or collect digital items.</h1>
               </Reveal>
               <Reveal className='onStep' keyframes={fadeInUp} delay={600} duration={600} triggerOnce>
-              <p className=" lead">
+              <p className="hero-section lead">
               Unit of data stored on a digital ledger, called a blockchain, that certifies a digital asset to be unique and therefore not interchangeable
               </p>
               </Reveal>
