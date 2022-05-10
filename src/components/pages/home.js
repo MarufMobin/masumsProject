@@ -12,10 +12,10 @@ import '../../assets/custom.scss';
 const home= () => (
   <div>
     
-    //Hero Section / Banner Section here
+    {/* Hero Section / Banner Section here */}
       <section className="jumbotron breadcumb no-bg h-vh cutm-minus-margin" style={{backgroundImage: `url(${'./img/bg-shape-1-dark.jpg'})`}}>
         
-        //Inner Banner Section
+        {/* Inner Banner Section */}
          <SliderMain/>
       </section>
       <section className='container no-bottom'>
@@ -28,11 +28,11 @@ const home= () => (
           </div>
         </div>
 
-        // Category Section here
+        {/* Category Section here */}
         <Catgor/>
       </section>
 
-      // New Items Section here
+      {/* New Items Section here */}
       <section className='container no-bottom'>
         <div className='row'>
           <div className='col-lg-12'> 
@@ -47,7 +47,7 @@ const home= () => (
          </div>
        </section>
 
-       // Hot Collection Section here
+       {/* Hot Collection Section here */}
       <section className='container no-bottom'>
         <div className='row'>
           <div className='col-lg-12'>
@@ -61,7 +61,7 @@ const home= () => (
         </div>
       </section>
       
-      //Top Seller Section here
+      {/* Top Seller Section here */}
       <section className='container no-bottom'>
         <div className='row'>
           <div className='col-lg-12'>
@@ -76,7 +76,7 @@ const home= () => (
         </div>
       </section>
 
-      // Footer Section here
+       {/* Footer Section here */}
     <Footer />
   </div>
 );

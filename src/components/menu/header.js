@@ -205,7 +205,7 @@ const Header= function() {
                         </div>
                     </div>
                     <div className="navbar-item">
-                      <NavLink to="/wallet">
+                      <NavLink to="#">
                           <img src="./img/items/icon-wallet.svg" alt="" />
                       </NavLink>
                     </div>

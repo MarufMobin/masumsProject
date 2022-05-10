@@ -1,6 +1,3 @@
-//Css Font Familly Linking here 
-//@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;600;700;800&display=swap');
-
 /* CSS Document */
 
 
@@ -46,7 +43,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'roc-grotesk'!important;
 }
 
 
@@ -2862,7 +2858,7 @@ i.font60 {
 
 .nft_coll_pp i {
     font-size: 10px;
-    color: #ffffff;
+    color: $color_more;
     background: $color;
     border-radius: 100%;
     -moz-border-radius: 100%;
@@ -3066,7 +3062,7 @@ i.font60 {
     position: relative;
     bottom: 22px;
     font-size: 14px;
-    color: #ddd;
+    color: $gray;
     float: right;
     span {
         color: $gray;
@@ -3142,7 +3138,7 @@ i.font60 {
 }
 
 .author_list_pp i {
-    color: #ffffff;
+    color: $color_more;
     background: $color;
     font-size: 10px;
     padding: 3px;
