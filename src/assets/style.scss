@@ -1,3 +1,6 @@
+//Css Font Familly Linking here 
+//@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
 /* CSS Document */
 
 
@@ -40,6 +43,12 @@
 
 */
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'roc-grotesk'!important;
+}
+
 
 /*color*/
 
@@ -76,6 +85,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #131313;
+    margin: 0px;
+    padding: 0px;
 }
 
 #routerhang {
@@ -103,17 +114,6 @@ section {
     &.no-bottom {
         padding-bottom: 0 !important;
     }
-    // .small-border {
-    //     display: block;
-    //     width: 50px;
-    //     height: 2px;
-    //     background: $color;
-    //     border-left: none;
-    //     border-left-color: currentcolor;
-    //     border-right: none;
-    //     border-right-color: currentcolor;
-    //     margin: 18px auto 30px;
-    // }
     &.bg-gray {
         background: rgb(247, 244, 253);
     }
@@ -850,19 +850,19 @@ a {
         position: relative;
         text-align: center;
         a {
-            color: $white_soft !important;
+            color: $white !important;
             text-transform: none;
             font-weight: normal;
             letter-spacing: normal;
             display: block;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: solid 1px #03ffb32b;
             padding: 8px 20px 8px 20px;
             min-width: 210px;
             width: 100%;
             text-align: left;
             &:hover {
-                color: $black !important;
-                background: $color;
+                color: $color !important;
+                background: $color_more;
             }
             &:last-child {
                 border-bottom: none;
@@ -3190,6 +3190,7 @@ i.font60 {
     column-gap: 20px;
     li {
         margin-bottom: 30px;
+        color: $color;
     }
     .author_list_pp {
         position: absolute;

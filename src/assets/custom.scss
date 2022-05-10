@@ -26,9 +26,22 @@
     transition: all 0.3s ease;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff !important;
+}
+
 // Hero Section Code Here
 .hero-section {
     color: #E7E9EB;
+}
+
+.cutm-minus-margin {
+    margin-top: -20px;
 }
 
 // Header and Footer Input Field Search Perpuss

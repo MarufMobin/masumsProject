@@ -8,11 +8,12 @@ import Footer from '../components/footer';
 import '../../assets/custom.scss';
 
 
+
 const home= () => (
   <div>
     
     //Hero Section / Banner Section here
-      <section className="jumbotron breadcumb no-bg h-vh" style={{backgroundImage: `url(${'./img/bg-shape-1-dark.jpg'})`}}>
+      <section className="jumbotron breadcumb no-bg h-vh cutm-minus-margin" style={{backgroundImage: `url(${'./img/bg-shape-1-dark.jpg'})`}}>
         
         //Inner Banner Section
          <SliderMain/>

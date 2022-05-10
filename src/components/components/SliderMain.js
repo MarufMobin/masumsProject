@@ -1,6 +1,7 @@
 import React from 'react';
 import Reveal from 'react-awesome-reveal';
 import { keyframes } from "@emotion/react";
+import { Link } from '@reach/router';
 
 const fadeInUp = keyframes`
   0% {
@@ -42,7 +43,9 @@ const slidermain= () => (
               </Reveal>
               <div className="spacer-10"></div>
               <Reveal className='onStep' keyframes={fadeInUp} delay={800} duration={900} triggerOnce>
-              <span onClick={()=> window.open("/#", "_self")} className="btn-main lead">Explore</span>
+                <Link to="/create">
+                    <span className="btn-main lead">Explore</span>
+                </Link>              
               <div className="mb-sm-30"></div>
               </Reveal>
           </div>

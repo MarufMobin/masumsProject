@@ -29,19 +29,11 @@ const Header= function() {
 
     const [openMenu, setOpenMenu] = React.useState(false);
     const [openMenu1, setOpenMenu1] = React.useState(false);
-    const [openMenu2, setOpenMenu2] = React.useState(false);
-    const [openMenu3, setOpenMenu3] = React.useState(false);
     const handleBtnClick = (): void => {
       setOpenMenu(!openMenu);
     };
     const handleBtnClick1 = (): void => {
       setOpenMenu1(!openMenu1);
-    };
-    const handleBtnClick2 = (): void => {
-      setOpenMenu2(!openMenu2);
-    };
-    const handleBtnClick3 = (): void => {
-      setOpenMenu3(!openMenu3);
     };
     const closeMenu = (): void => {
       setOpenMenu(false);
@@ -49,24 +41,13 @@ const Header= function() {
     const closeMenu1 = (): void => {
       setOpenMenu1(false);
     };
-    const closeMenu2 = (): void => {
-      setOpenMenu2(false);
-    };
-    const closeMenu3 = (): void => {
-      setOpenMenu3(false);
-    };
     const ref = useOnclickOutside(() => {
       closeMenu();
     });
     const ref1 = useOnclickOutside(() => {
       closeMenu1();
     });
-    const ref2 = useOnclickOutside(() => {
-      closeMenu2();
-    });
-    const ref3 = useOnclickOutside(() => {
-      closeMenu3();
-    });
+    
 
     const [showmenu, btn_icon] = useState(false);
     useEffect(() => {
@@ -91,7 +72,7 @@ const Header= function() {
       };
     }, []);
     return (
-    <header id="myHeader" className='navbar white py-2'>
+    <header id="myHeader" className='navbar white'>
      <div className='container'>
        <div className='row w-100-nav'>
           <div className='logo px-0'>
@@ -224,7 +205,9 @@ const Header= function() {
                         </div>
                     </div>
                     <div className="navbar-item">
-                        <img src="./img/items/icon-wallet.svg" alt="" />
+                      <NavLink to="/wallet">
+                          <img src="./img/items/icon-wallet.svg" alt="" />
+                      </NavLink>
                     </div>
                   </div>
                 </Breakpoint>
