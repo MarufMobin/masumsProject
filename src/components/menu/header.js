@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
+import useFirebase from './../../hooks/useFirebase';
 
 
 setDefaultBreakpoints([
@@ -26,7 +27,8 @@ const NavLink = props => (
 
 
 const Header= function() {
-
+  //use Fire base using here 
+  const {user,logOut } = useFirebase();
     const [openMenu, setOpenMenu] = React.useState(false);
     const [openMenu1, setOpenMenu1] = React.useState(false);
     const handleBtnClick = (): void => {
@@ -215,11 +217,14 @@ const Header= function() {
                 </Breakpoint>
               </BreakpointProvider>
 
-              <div className='mainside'>
+              { user.displayName ? 
+              <div className='mainside d-flex'>
+                  { user?.photoURL ? <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%"}} onClick={logOut} className="cursor-pointer" /> : <span><i className="fa fa-user fs-4 text-white me-3" onClick={logOut}></i></span> }
+              </div> : <div className='mainside'>
                 <NavLink to="/login" className="custom-design">
-                      <span className="custm-mini-button  lead ">SING IN</span>
+                      <span className="custm-mini-button  lead">SING IN</span>
                 </NavLink>
-              </div>
+              </div>}
                   
       </div>
 

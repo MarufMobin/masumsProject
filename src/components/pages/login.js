@@ -1,15 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import { Link, useNavigate } from '@reach/router';
-import initializeAuthentication from '../../Firebase/firebase.initialize';
-import {getAuth, signInWithPopup, GoogleAuthProvider,signOut } from 'firebase/auth';
+import { Link } from '@reach/router';
+import useFirebase from './../../hooks/useFirebase';
 
-// firebase Authentication are here 
-initializeAuthentication();
-
-// Google Auth Provider 
-const provider = new GoogleAuthProvider();
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
     background: #403f83;
@@ -41,45 +35,13 @@ const GlobalStyles = createGlobalStyle`
     .item-dropdown .dropdown a{
       color: #fff !important;
     }
+
   }
 `;
 
 const LoginTwo= () => {
-
-  const [ user , setUser ] = useState({});
-  
-  const auth = getAuth();
-  const navigate = useNavigate();
-  const handleGoogleSignin =() =>{
-    signInWithPopup(auth, provider)
-    .then( result =>{
-        const { displayName,  email, photoURL } = result.user;
-        const  logInUser = {
-              name: displayName,
-              email: email,
-              photo: photoURL,
-        };
-        setUser(logInUser);
-        navigate('/home')
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorMessage = error.message;
-      if( errorMessage ){
-        navigate('/login');
-      }
-    });
-  }
-
-  const handleSingOut = () =>{
-      signOut(auth).then(() => {
-        setUser( { } )
-      }).catch((error) => {
-        console.error(error);
-      });
-  }
-  console.log(user);
-  return (
-<div>
+    const {  singInUsingGoogle ,singInUsingFacebook} = useFirebase();
+  return ( <div>
 <GlobalStyles/>
 
   <section className='jumbotron breadcumb no-bg' style={{backgroundImage: `url(${'./img/background/subheader.jpg'})`}}>
@@ -96,13 +58,15 @@ const LoginTwo= () => {
               <h3 className="mb10">Sign In</h3>
               <p>Login using an existing account or create a new account <Link to="/register"><span>here</span>.</Link></p>
               <form name="contactForm" id='contact_form' className="form-border" action='#'>
-
                   <div className="field-set">
-                      <input type='text' name='email' id='email' className="form-control" placeholder="username"/>
+                  {/* onSubmit={handleContactForm} */}
+                      <input type='text' name='email' id='email' className="form-control" placeholder="username"   />
+                      {/* onBlur={handleEmailField} */}
                   </div>
                 
                  <div className="field-set">
-                      <input type='password' name='password' id='password' className="form-control" placeholder="password"/>
+                      <input type='password' name='password' id='password' className="form-control" placeholder="password"  autoComplete="off"  /> 
+                      {/* onBlur={handlePasswordField}  */}
                   </div>
                 
                 <div className="field-set">
@@ -114,9 +78,8 @@ const LoginTwo= () => {
                 <div className="spacer-single"></div>
                   <ul className="list s3">
                       <li>Login with:</li>
-                      <li><span >Facebook</span></li>
-                      <li><span onClick={ handleSingOut }>Sing Out</span></li>
-                      <li><span onClick={handleGoogleSignin}>Google</span></li>
+                      <li><span onClick={singInUsingFacebook}>Facebook</span></li>
+                      <li><span onClick={singInUsingGoogle}>Google</span></li>
                   </ul>
               </form>
             </div>

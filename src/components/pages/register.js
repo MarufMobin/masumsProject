@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import { Link, useNavigate } from '@reach/router';
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import { Link } from '@reach/router';
+
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
@@ -35,87 +35,14 @@ const GlobalStyles = createGlobalStyle`
     .item-dropdown .dropdown a{
       color: #fff !important;
     }
+
   }
 `;
 
 
 
 const Register= () => {
-  const navigation = useNavigate();
-  const auth = getAuth();
-  // Error Massage
-  const [ error , setError ] = useState('');
-  //User Fill up Fields are here
-  const [ phone, setPhone ] = useState('');
-  const [ username, setUserName ] = useState('');
-  const [ email, setEmail ] = useState('');
-  const [ name, setName ] = useState('');
-  const [ password, setPassword ] = useState('');
-  const [ rePassword, setRePassword ] = useState('');
-
-  const handleRegister = e =>{
-    e.preventDefault();
-    console.log("letest Datas", name, username, email, password,phone,rePassword )
-    registerNewUser(email, password)
-  }
-
-  const handleField = e =>{
-    if( e.target.name === 'name' ){
-        setName(e.target.value)
-    }
-    if( e.target.name === 'email' ){
-        setEmail(e.target.value)
-    }
-if( e.target.name === 'username' ){
-        setUserName(e.target.value)
-    }
-  if( e.target.name === 'password' ){
-      setPassword(e.target.password)
-    }
-  if( e.target.name === 'rePassword' ){
-    setRePassword(e.target.rePassword)
-    }
-    if( e.target.name == 'phone' ){
-        setPhone(e.target.value)
-    }
   
-    
-  }
-  // Register User 
-
-  const registerNewUser = ( email, password ) =>{
-    console.log("emialpass",email,password)
-      createUserWithEmailAndPassword(auth,email,password)
-      .then( result =>{
-          const user = result.user;
-          console.log(user);
-          userNameSet();
-          setError('');
-          navigation('/login')
-      }).catch( error =>{
-          console.log(error.massage)
-      })
-  }
-  // Set User Name 
-    const userNameSet  = () =>{
-        updateProfile(auth.currentUser, {
-          displayName: name
-        }).then( result => {
-            console.log(result)
-        }).catch((error) => {
-            setError(error.massage)
-        });
-    }
-    console.log(error)
-  const passwordField = e =>{
-      setPassword(e.target.value)
-  }
-  const rePasswordField = e =>{
-      setPassword(e.target.value)
-  }
-
-  
- 
 return (
 <div>
 <GlobalStyles />
@@ -142,49 +69,49 @@ return (
 
       <div className="spacer-10"></div>
 
-      <form name="contactForm" id='contact_form' className="form-border" action='#' onSubmit={handleRegister}>
+      <form name="contactForm" id='contact_form' className="form-border" action='#' >
 
                         <div className="row">
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Name:</label>
-                                    <input type='text' name='name' id='name' className="form-control" onBlur={handleField}/>
+                                    <input type='text' name='name' id='name' className="form-control"/>
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Email Address:</label>
-                                    <input type='text' name='email' id='email' className="form-control" onBlur={handleField} />
+                                    <input type='text' name='email' id='email' className="form-control" />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Choose a Username:</label>
-                                    <input type='text' name='username' id='username' className="form-control" onBlur={handleField} />
+                                    <input type='text' name='username' id='username' className="form-control" />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Phone:</label>
-                                    <input type='text' name='phone' id='phone' className="form-control" onBlur={handleField} />
+                                    <input type='text' name='phone' id='phone' className="form-control" />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Password:</label>
-                                    <input type='password' name='password' id='password' className="form-control" onBlur={passwordField}/>
+                                    <input type='password' name='password' id='password' className="form-control" autoComplete="off" />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Re-enter Password:</label>
-                                    <input type='password' name='rePassword' id='re-password' className="form-control" onBlur={rePasswordField} />
+                                    <input type='password' name='rePassword' id='re-password' className="form-control" autoComplete="off" />
                                 </div>
                             </div>
 
