@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Link } from '@reach/router';
 
 class CustomSlide extends Component {
   render() {
@@ -72,11 +73,14 @@ export default class Responsive extends Component {
                       <span><img src="./img/collections/coll-1.jpg" className="lazy img-fluid" alt=""/></span>
                   </div>
                   <div className="nft_coll_pp">
-                      <span onClick={()=> window.open("/home", "_self")}><img className="lazy" src="./img/author/author-1.jpg" alt=""/></span>
+                      <Link to="/home">
+                        <span><img className="lazy" src="./img/author/author-1.jpg" alt=""/></span>
+                      </Link>
                       <i className="fa fa-check"></i>
                   </div>
                   <div className="nft_coll_info">
-                      <span onClick={()=> window.open("/home", "_self")}><h4>Abstraction</h4></span>
+                    
+                      <span><h4>Abstraction</h4></span>
                       <span>ERC-192</span>
                   </div>
               </div>

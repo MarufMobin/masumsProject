@@ -1,7 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
+import { Link, useNavigate } from '@reach/router';
+import initializeAuthentication from '../../Firebase/firebase.initialize';
+import {getAuth, signInWithPopup, GoogleAuthProvider,signOut } from 'firebase/auth';
 
+// firebase Authentication are here 
+initializeAuthentication();
+
+// Google Auth Provider 
+const provider = new GoogleAuthProvider();
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
     background: #403f83;
@@ -36,7 +44,40 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-const logintwo= () => (
+const LoginTwo= () => {
+
+  const [ user , setUser ] = useState({});
+  
+  const auth = getAuth();
+  const navigate = useNavigate();
+  const handleGoogleSignin =() =>{
+    signInWithPopup(auth, provider)
+    .then( result =>{
+        const { displayName,  email, photoURL } = result.user;
+        const  logInUser = {
+              name: displayName,
+              email: email,
+              photo: photoURL,
+        };
+        setUser(logInUser);
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorMessage = error.message;
+      if( errorMessage ){
+        navigate('/login');
+      }
+    });
+  }
+
+  const handleSingOut = () =>{
+      signOut(auth).then(() => {
+        setUser( { } )
+      }).catch((error) => {
+        console.error(error);
+      });
+  }
+  console.log(user);
+  return (
 <div>
 <GlobalStyles/>
 
@@ -52,7 +93,7 @@ const logintwo= () => (
           <div className="col-lg-4 offset-lg-2 wow fadeIn" data-wow-delay=".5s">
             <div className="box-login">
               <h3 className="mb10">Sign In</h3>
-              <p>Login using an existing account or create a new account <span>here</span>.</p>
+              <p>Login using an existing account or create a new account <Link to="/register"><span>here</span>.</Link></p>
               <form name="contactForm" id='contact_form' className="form-border" action='#'>
 
                   <div className="field-set">
@@ -73,7 +114,8 @@ const logintwo= () => (
                   <ul className="list s3">
                       <li>Login with:</li>
                       <li><span >Facebook</span></li>
-                      <li><span >Google</span></li>
+                      <li><span onClick={ handleSingOut }>Sing Out</span></li>
+                      <li><span onClick={handleGoogleSignin}>Google</span></li>
                   </ul>
               </form>
             </div>
@@ -86,5 +128,5 @@ const logintwo= () => (
   <Footer />
 </div>
 
-);
-export default logintwo;
+)};
+export default LoginTwo;

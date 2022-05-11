@@ -72,7 +72,7 @@ const Header= function() {
       };
     }, []);
     return (
-    <header id="myHeader" className='navbar white'>
+    <header id="myHeader" className='navbar'>
      <div className='container'>
        <div className='row w-100-nav'>
           <div className='logo px-0'>
@@ -84,12 +84,12 @@ const Header= function() {
                     alt="#"
                   />
                   <img
-                    src="./img/logo-2.png"
+                    src="./img/blocpod-logo.svg"
                     className="img-fluid d-3"
                     alt="#"
                   />
                   <img
-                    src="./img/logo-light.png"
+                    src="./img/blocpod-logo.svg"
                     className="img-fluid d-none"
                     alt="#"
                   />
@@ -114,7 +114,7 @@ const Header= function() {
                             {openMenu && (
                             <div className='item-dropdown'>
                               <div className="dropdown" onClick={closeMenu}>
-                                <NavLink to="#">All NFTs</NavLink>
+                                <NavLink to="/nftdetails">All NFTs</NavLink>
                                 <NavLink to="#">Art</NavLink>
                                 <NavLink to="#">Music</NavLink>
                                 <NavLink to="#">Photography</NavLink>
@@ -149,7 +149,9 @@ const Header= function() {
                         </div>
                     </div>
                     <div className="navbar-item">
-                        <img src="./img/items/icon-wallet.svg" alt="" />
+                      <NavLink to="/wallet">
+                            <img src="./img/items/icon-wallet.svg" alt=""  className="cursor-pointer"/>
+                        </NavLink>
                     </div>
                     <div className='mainside'>
                       <span className="custm-mini-button  lead ">SING IN</span>
@@ -170,7 +172,7 @@ const Header= function() {
                             {openMenu && (
                             <div className='item-dropdown'>
                               <div className="dropdown" onClick={closeMenu}>
-                                <NavLink to="#">All NFTs</NavLink>
+                                <NavLink to="/nftdetails">All NFTs</NavLink>
                                 <NavLink to="#">Art</NavLink>
                                 <NavLink to="#">Music</NavLink>
                                 <NavLink to="#">Photography</NavLink>
@@ -205,8 +207,8 @@ const Header= function() {
                         </div>
                     </div>
                     <div className="navbar-item">
-                      <NavLink to="#">
-                          <img src="./img/items/icon-wallet.svg" alt="" />
+                      <NavLink to="/wallet">
+                          <img src="./img/items/icon-wallet.svg" alt="" className="cursor-pointer"/>
                       </NavLink>
                     </div>
                   </div>
@@ -214,15 +216,17 @@ const Header= function() {
               </BreakpointProvider>
 
               <div className='mainside'>
-                <span className="custm-mini-button  lead ">SING IN</span>
+                <NavLink to="/login" className="custom-design">
+                      <span className="custm-mini-button  lead ">SING IN</span>
+                </NavLink>
               </div>
                   
       </div>
 
         <button className="nav-icon" onClick={() => btn_icon(!showmenu)}>
-          <div className="menu-line white"></div>
-          <div className="menu-line1 white"></div>
-          <div className="menu-line2 white"></div>
+          <div className="menu-line"></div>
+          <div className="menu-line1"></div>
+          <div className="menu-line2"></div>
         </button>
 
       </div>     

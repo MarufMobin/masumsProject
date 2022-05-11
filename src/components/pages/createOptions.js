@@ -62,14 +62,16 @@ render() {
           <div className='row'>
             <div className="col-md-6 offset-md-3">
                 <p>Choose "Single" if you want your collectible to be one of a kind or "Multiple" if you want to sell one collectible times</p>
-                <Link to="/create2" className="opt-create">
-                    <img src="./img/misc/coll-single.png" alt=""/>
-                    <h3>Single</h3>
-                </Link>
-                <Link to="/create3" className="opt-create">
-                    <img src="./img/misc/coll-multiple.png" alt=""/>
-                    <h3>Multiple</h3>
-                </Link>
+                <div className="d-flex justify-content-between align-items-center mt-5">
+                  <Link to="/create2" className="opt-create text-center">
+                      <img src="./img/misc/coll-single.png" alt=""/>
+                      <h3 className="mt-3">Single</h3>
+                  </Link>
+                  <Link to="/create3" className="opt-create text-center">
+                      <img src="./img/misc/coll-multiple.png" alt=""/>
+                      <h3 className="mt-3">Multiple</h3>
+                  </Link>
+                </div>
             </div>
           </div>
         </section>

@@ -167,7 +167,7 @@ section {
     position: relative;
     overflow: hidden;
     font-size: 11pt;
-    color: $black;
+    color: $color;
     background: none;
     border: 2px solid $color;
     border-radius: 0;
@@ -1158,7 +1158,6 @@ a {
         a {
             text-align: center;
             color: #fff !important;
-            background: #8364E2;
             border-radius: 6px;
             letter-spacing: normal;
             outline: 0;
@@ -1171,7 +1170,6 @@ a {
             box-shadow: 2px 2px 20px 0px rgba(131, 100, 226, 0);
             transition: all 0.3s ease;
             &:hover {
-                box-shadow: 2px 2px 20px 0px rgba(131, 100, 226, 0.5);
                 transition: all 0.3s ease;
             }
         }
@@ -1556,7 +1554,7 @@ a {
             color: $black;
         }
         p {
-            color: $black;
+            color: #fff!important;
             margin-top: 15px;
         }
         .list {
@@ -3874,6 +3872,7 @@ img.img-rounded {
         justify-content: left;
         font-size: 1rem;
         li {
+            color: #fff!important;
             display: inline;
             margin-right: 20px;
             letter-spacing: normal;
@@ -4540,8 +4539,20 @@ img.img-rounded {
     }
 }
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .h-vh {
+        height: 80vh!important;
+    }
+}
 
-@media only screen and (max-width: 420px) {}
+@media only screen and (max-width: 420px) {
+    .h-vh {
+        height: 80vh!important;
+    }
+}
 
-@media only screen and (max-width: 378px) {}
+@media only screen and (max-width: 378px) {
+    .h-vh {
+        height: 80vh!important;
+    }
+}

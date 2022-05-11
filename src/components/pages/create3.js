@@ -88,7 +88,7 @@ render() {
             <div className='container'>
               <div className='row m-10-hor'>
                 <div className='col-12'>
-                  <h1 className='text-center'>Create 2</h1>
+                  <h1 className='text-center'>Create Multiple Collectible</h1>
                 </div>
               </div>
             </div>

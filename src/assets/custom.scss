@@ -31,8 +31,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
     color: #fff !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 // Hero Section Code Here
@@ -68,4 +73,14 @@ h6 {
 //Footer Part Css Here
 .custon-color-whilte-footer {
     color: #fff;
+}
+
+//Register Page
+.custom-link-btn {
+    color: #03FFB3;
+}
+
+.cutom-p {
+    color: #fff;
+    margin-top: 8px;
 }

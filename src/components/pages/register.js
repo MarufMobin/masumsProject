@@ -1,6 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
+import { Link } from '@reach/router';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
@@ -38,7 +39,38 @@ const GlobalStyles = createGlobalStyle`
 
 
 
-const register= () => (
+const Register= () => {
+
+  const [ phone, setPhone ] = useState('');
+  const [ username, setUserName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ name, setName ] = useState('');
+  const [ password, setPassword ] = useState('');
+
+  const handleRegister = e =>{
+    e.preventDefault();
+      console.log(phone, username, email, name, password)
+  }
+
+  const handleField = e =>{
+    if( e.target.name == 'name' ){
+        setName(e.target.value)
+    }
+    else if( e.target.name == 'email' ){
+        setEmail(e.target.value)
+    }
+    else if( e.target.name == 'username' ){
+        setUserName(e.target.value)
+    }
+    else if( e.target.name == 'phone' ){
+        setPhone(e.target.value)
+    }
+    else if( e.target.name == 'password' &&  e.target.name == 're-password'  ){
+      setPassword(e.target.value)
+    }
+  }
+
+return (
 <div>
 <GlobalStyles />
 
@@ -64,55 +96,58 @@ const register= () => (
 
       <div className="spacer-10"></div>
 
-      <form name="contactForm" id='contact_form' className="form-border" action='#'>
+      <form name="contactForm" id='contact_form' className="form-border" action='#' onSubmit={handleRegister}>
 
                         <div className="row">
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Name:</label>
-                                    <input type='text' name='name' id='name' className="form-control"/>
+                                    <input type='text' name='name' id='name' className="form-control" onBlur={handleField}/>
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Email Address:</label>
-                                    <input type='text' name='email' id='email' className="form-control"/>
+                                    <input type='text' name='email' id='email' className="form-control" onBlur={handleField} />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Choose a Username:</label>
-                                    <input type='text' name='username' id='username' className="form-control"/>
+                                    <input type='text' name='username' id='username' className="form-control" onBlur={handleField} />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Phone:</label>
-                                    <input type='text' name='phone' id='phone' className="form-control"/>
+                                    <input type='text' name='phone' id='phone' className="form-control" onBlur={handleField} />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Password:</label>
-                                    <input type='text' name='password' id='password' className="form-control"/>
+                                    <input type='password' name='password' id='password' className="form-control" onBlur={handleField} />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Re-enter Password:</label>
-                                    <input type='text' name='re-password' id='re-password' className="form-control"/>
+                                    <input type='password' name='re-password' id='re-password' className="form-control" onBlur={handleField} />
                                 </div>
                             </div>
 
                             <div className="col-md-12">
-                                <div id='submit' className="pull-left">
+                                <div id='submit' className="pull-left me-3">
                                     <input type='submit' id='send_message' value='Register Now' className="btn btn-main color-2" />
+                                </div>
+                                <div className="cutom-p">
+                                   Are You Already Member? Click <span className='custom-link-btn'> <Link to="/login">Here</Link></span>
                                 </div>
                                 
                                 <div className="clearfix"></div>
@@ -128,5 +163,5 @@ const register= () => (
   <Footer />
 </div>
 
-);
-export default register;
+)};
+export default Register;

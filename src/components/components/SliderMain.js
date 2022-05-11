@@ -42,12 +42,20 @@ const slidermain= () => (
               </p>
               </Reveal>
               <div className="spacer-10"></div>
-              <Reveal className='onStep' keyframes={fadeInUp} delay={800} duration={900} triggerOnce>
+              <div className='d-flex'>
+                <Reveal className='onStep' keyframes={fadeInUp} delay={800} duration={900} triggerOnce>
+                  <Link to="/createOptions">
+                      <span className="btn-main lead me-3">Create</span>
+                  </Link>              
+                <div className="mb-sm-30"></div>
+                </Reveal>
+                <Reveal className='onStep' keyframes={fadeInUp} delay={800} duration={900} triggerOnce>
                 <Link to="/create">
                     <span className="btn-main lead">Explore</span>
                 </Link>              
               <div className="mb-sm-30"></div>
               </Reveal>
+              </div>
           </div>
           <div className="col-md-6 xs-hide">
             <Reveal className='onStep' keyframes={fadeIn} delay={900} duration={1500} triggerOnce>
