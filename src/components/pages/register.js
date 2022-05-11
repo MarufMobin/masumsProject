@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import { Link } from '@reach/router';
+import { Link, useNavigate } from '@reach/router';
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
@@ -40,36 +41,81 @@ const GlobalStyles = createGlobalStyle`
 
 
 const Register= () => {
-
+  const navigation = useNavigate();
+  const auth = getAuth();
+  // Error Massage
+  const [ error , setError ] = useState('');
+  //User Fill up Fields are here
   const [ phone, setPhone ] = useState('');
   const [ username, setUserName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ name, setName ] = useState('');
   const [ password, setPassword ] = useState('');
+  const [ rePassword, setRePassword ] = useState('');
 
   const handleRegister = e =>{
     e.preventDefault();
-      console.log(phone, username, email, name, password)
+    console.log("letest Datas", name, username, email, password,phone,rePassword )
+    registerNewUser(email, password)
   }
 
   const handleField = e =>{
-    if( e.target.name == 'name' ){
+    if( e.target.name === 'name' ){
         setName(e.target.value)
     }
-    else if( e.target.name == 'email' ){
+    if( e.target.name === 'email' ){
         setEmail(e.target.value)
     }
-    else if( e.target.name == 'username' ){
+if( e.target.name === 'username' ){
         setUserName(e.target.value)
     }
-    else if( e.target.name == 'phone' ){
+  if( e.target.name === 'password' ){
+      setPassword(e.target.password)
+    }
+  if( e.target.name === 'rePassword' ){
+    setRePassword(e.target.rePassword)
+    }
+    if( e.target.name == 'phone' ){
         setPhone(e.target.value)
     }
-    else if( e.target.name == 'password' &&  e.target.name == 're-password'  ){
-      setPassword(e.target.value)
+  
+    
+  }
+  // Register User 
+
+  const registerNewUser = ( email, password ) =>{
+    console.log("emialpass",email,password)
+      createUserWithEmailAndPassword(auth,email,password)
+      .then( result =>{
+          const user = result.user;
+          console.log(user);
+          userNameSet();
+          setError('');
+          navigation('/login')
+      }).catch( error =>{
+          console.log(error.massage)
+      })
+  }
+  // Set User Name 
+    const userNameSet  = () =>{
+        updateProfile(auth.currentUser, {
+          displayName: name
+        }).then( result => {
+            console.log(result)
+        }).catch((error) => {
+            setError(error.massage)
+        });
     }
+    console.log(error)
+  const passwordField = e =>{
+      setPassword(e.target.value)
+  }
+  const rePasswordField = e =>{
+      setPassword(e.target.value)
   }
 
+  
+ 
 return (
 <div>
 <GlobalStyles />
@@ -131,14 +177,14 @@ return (
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Password:</label>
-                                    <input type='password' name='password' id='password' className="form-control" onBlur={handleField} />
+                                    <input type='password' name='password' id='password' className="form-control" onBlur={passwordField}/>
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Re-enter Password:</label>
-                                    <input type='password' name='re-password' id='re-password' className="form-control" onBlur={handleField} />
+                                    <input type='password' name='rePassword' id='re-password' className="form-control" onBlur={rePasswordField} />
                                 </div>
                             </div>
 

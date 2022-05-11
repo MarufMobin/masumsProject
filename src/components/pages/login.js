@@ -60,6 +60,7 @@ const LoginTwo= () => {
               photo: photoURL,
         };
         setUser(logInUser);
+        navigate('/home')
     }).catch((error) => {
       // Handle Errors here.
       const errorMessage = error.message;
