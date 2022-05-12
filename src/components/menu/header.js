@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Breakpoint, { BreakpointProvider, setDefaultBreakpoints } from "react-socks";
 import { Link } from '@reach/router';
 import useOnclickOutside from "react-cool-onclickoutside";
-import useFirebase from './../../hooks/useFirebase';
+import useAuth from './../../context/useAuth';
+
 
 
 setDefaultBreakpoints([
@@ -28,7 +29,7 @@ const NavLink = props => (
 
 const Header= function() {
   //use Fire base using here 
-  const {user,logOut } = useFirebase();
+  const {user,logOut } = useAuth();
     const [openMenu, setOpenMenu] = React.useState(false);
     const [openMenu1, setOpenMenu1] = React.useState(false);
     const handleBtnClick = (): void => {
@@ -219,7 +220,7 @@ const Header= function() {
 
               { user.displayName ? 
               <div className='mainside d-flex'>
-                  { user?.photoURL ? <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%"}} onClick={logOut} className="cursor-pointer" /> : <span><i className="fa fa-user fs-4 text-white me-3" onClick={logOut}></i></span> }
+                  { user?.photoURL ?  <span><img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%"}} onClick={logOut} className="cursor-pointer" /> <span style={{color: "#03FFB3"}}>{user?.displayName}</span> </span> : <span><i style={{color:"#03FFB3"}} className="fa fa-user fs-4 me-3" onClick={logOut}></i><span style={{color: "#03FFB3"}}>{user?.displayName}</span></span> }
               </div> : <div className='mainside'>
                 <NavLink to="/login" className="custom-design">
                       <span className="custm-mini-button  lead">SING IN</span>

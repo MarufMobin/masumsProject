@@ -1,8 +1,9 @@
 import React from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import { Link } from '@reach/router';
-
+import { Link, useNavigate } from '@reach/router';
+import { useState } from 'react';
+import useAuth from './../../context/useAuth';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
@@ -43,6 +44,31 @@ const GlobalStyles = createGlobalStyle`
 
 const Register= () => {
   
+  const { registerViaEmailandPassword } = useAuth()
+  const [ email, setEmail ] = useState("");
+  const [ userName, setUserName ] = useState("");
+  const [ password, setPassword ] = useState("");
+
+  const handleFormSubmit = e =>{
+      e.preventDefault();
+      registerViaEmailandPassword(email,password,userName)
+    // console.log("yesssss", name, email, userName,phone,password,rePass,"conform")
+  }
+
+  const handleField = e =>{
+      if( e.target.name === 'email'){
+        setEmail(e.target.value);
+      }
+      if( e.target.name === 'username'){
+        setUserName(e.target.value);
+      }
+  }
+  const handlePassField = e =>{
+      if( e.target.name == 'password'   ){
+        setPassword(e.target.value)
+      }
+  }
+  
 return (
 <div>
 <GlobalStyles />
@@ -69,7 +95,7 @@ return (
 
       <div className="spacer-10"></div>
 
-      <form name="contactForm" id='contact_form' className="form-border" action='#' >
+      <form name="contactForm" id='contact_form' className="form-border" action='#' onSubmit={handleFormSubmit}>
 
                         <div className="row">
 
@@ -83,14 +109,14 @@ return (
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Email Address:</label>
-                                    <input type='text' name='email' id='email' className="form-control" />
+                                    <input type='text' name='email' id='email' className="form-control"  onBlur={handleField}/>
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Choose a Username:</label>
-                                    <input type='text' name='username' id='username' className="form-control" />
+                                    <input type='text' name='username' id='username' className="form-control" onBlur={handleField} />
                                 </div>
                             </div>
 
@@ -104,14 +130,14 @@ return (
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Password:</label>
-                                    <input type='password' name='password' id='password' className="form-control" autoComplete="off" />
+                                    <input type='password' name='password' id='password' className="form-control" autoComplete="off" onBlur={handlePassField} />
                                 </div>
                             </div>
 
                             <div className="col-md-6">
                                 <div className="field-set">
                                     <label>Re-enter Password:</label>
-                                    <input type='password' name='rePassword' id='re-password' className="form-control" autoComplete="off" />
+                                    <input type='password' name='rePassword' id='re-password' className="form-control" autoComplete="off"/>
                                 </div>
                             </div>
 

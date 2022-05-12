@@ -2,7 +2,8 @@ import React from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
 import { Link } from '@reach/router';
-import useFirebase from './../../hooks/useFirebase';
+import { useState } from 'react';
+import useAuth from './../../context/useAuth';
 
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
@@ -40,7 +41,20 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const LoginTwo= () => {
-    const {  singInUsingGoogle ,singInUsingFacebook} = useFirebase();
+    const {  singInUsingGoogle ,singInUsingFacebook, logInuser } = useAuth();
+    const [ email , setEmail ] = useState('');
+    const [ password , setPassword ] = useState('');
+    const handleContactForm = e =>{
+      e.preventDefault();
+      logInuser(email, password)
+    }
+    const handleEmailField = e =>{
+      setEmail(e.target.value)
+    } 
+    const handlePasswordField = e =>{
+      setPassword(e.target.value)
+    }
+    
   return ( <div>
 <GlobalStyles/>
 
@@ -57,16 +71,16 @@ const LoginTwo= () => {
             <div className="box-login">
               <h3 className="mb10">Sign In</h3>
               <p>Login using an existing account or create a new account <Link to="/register"><span>here</span>.</Link></p>
-              <form name="contactForm" id='contact_form' className="form-border" action='#'>
+              <form name="contactForm" id='contact_form' className="form-border" action='#' onSubmit={handleContactForm} >
                   <div className="field-set">
-                  {/* onSubmit={handleContactForm} */}
-                      <input type='text' name='email' id='email' className="form-control" placeholder="username"   />
-                      {/* onBlur={handleEmailField} */}
+           
+                      <input type='text' name='email' id='email' className="form-control" placeholder="username" onBlur={handleEmailField}  />
+             
                   </div>
                 
                  <div className="field-set">
-                      <input type='password' name='password' id='password' className="form-control" placeholder="password"  autoComplete="off"  /> 
-                      {/* onBlur={handlePasswordField}  */}
+                      <input type='password' name='password' id='password' className="form-control" placeholder="password"  autoComplete="off" onBlur={handlePasswordField}   /> 
+                      
                   </div>
                 
                 <div className="field-set">
