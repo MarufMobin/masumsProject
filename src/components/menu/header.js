@@ -28,15 +28,20 @@ const NavLink = props => (
 
 
 const Header= function() {
+  
   //use Fire base using here 
   const {user,logOut } = useAuth();
     const [openMenu, setOpenMenu] = React.useState(false);
     const [openMenu1, setOpenMenu1] = React.useState(false);
+    const [openMenu2, setOpenMenu2] = React.useState(false);
     const handleBtnClick = (): void => {
       setOpenMenu(!openMenu);
     };
     const handleBtnClick1 = (): void => {
       setOpenMenu1(!openMenu1);
+    };
+    const handleBtnClick2 = (): void => {
+      setOpenMenu2(!openMenu1);
     };
     const closeMenu = (): void => {
       setOpenMenu(false);
@@ -44,11 +49,17 @@ const Header= function() {
     const closeMenu1 = (): void => {
       setOpenMenu1(false);
     };
+    const closeMenu2 = (): void => {
+      setOpenMenu2(false);
+    };
     const ref = useOnclickOutside(() => {
       closeMenu();
     });
     const ref1 = useOnclickOutside(() => {
       closeMenu1();
+    });
+    const ref2 = useOnclickOutside(() => {
+      closeMenu2();
     });
     
 
@@ -209,23 +220,50 @@ const Header= function() {
                           
                         </div>
                     </div>
+
                     <div className="navbar-item">
                       <NavLink to="/wallet">
                           <img src="./img/items/icon-wallet.svg" alt="" className="cursor-pointer"/>
                       </NavLink>
                     </div>
+
+                    <div className="navbar-item">
+                    { user.displayName ? 
+                      <div className='mainside d-flex'>
+                          { user?.photoURL ?
+                            <span>
+                              <div ref={ref2}>
+                          <div className="dropdown-custom btn" 
+                             onMouseEnter={handleBtnClick2} onMouseLeave={closeMenu2}>
+                                    <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%"}} className="cursor-pointer" /> 
+                            <span className='lines'></span>
+                            {openMenu2 && (
+                            <div className='item-dropdown'>
+                              <div className="dropdown" onClick={closeMenu2}>
+                              <NavLink to="#" style={{borderBottom: "1px solid #03FFB3",borderRadius:"0px"}}><span style={{color: "#03FFB3"}}>{user?.displayName}</span> </NavLink>
+                              <NavLink to="/create">Edit Profile</NavLink>
+                              </div>
+                            </div>
+                          )}
+                          </div>
+                          
+                        </div>
+                              
+                              </span> : <span>
+                                <i style={{color:"#03FFB3"}} className="fa fa-user fs-4 me-3" onClick={logOut}></i>
+                                {/* <span style={{color: "#03FFB3"}}>{user?.displayName}</span> */}
+                                </span> }
+                      </div> : <div className='mainside'>
+                        <NavLink to="/login" className="custom-design">
+                              <span className="custm-mini-button  lead">SING IN</span>
+                        </NavLink>
+                      </div>}
+                    </div>
                   </div>
                 </Breakpoint>
               </BreakpointProvider>
 
-              { user.displayName ? 
-              <div className='mainside d-flex'>
-                  { user?.photoURL ?  <span><img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%"}} onClick={logOut} className="cursor-pointer" /> <span style={{color: "#03FFB3"}}>{user?.displayName}</span> </span> : <span><i style={{color:"#03FFB3"}} className="fa fa-user fs-4 me-3" onClick={logOut}></i><span style={{color: "#03FFB3"}}>{user?.displayName}</span></span> }
-              </div> : <div className='mainside'>
-                <NavLink to="/login" className="custom-design">
-                      <span className="custm-mini-button  lead">SING IN</span>
-                </NavLink>
-              </div>}
+              
                   
       </div>
 
