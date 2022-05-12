@@ -235,10 +235,10 @@ const Header= function() {
                               <div ref={ref2}>
                           <div className="dropdown-custom btn" 
                              onMouseEnter={handleBtnClick2} onMouseLeave={closeMenu2}>
-                                    <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%"}} className="cursor-pointer" /> 
-                            <span className='lines'></span>
+                                    <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%", marginTop:'-5px'}} className="cursor-pointer" /> 
+                            <span className='lines line-none'></span>
                             {openMenu2 && (
-                            <div className='item-dropdown'>
+                            <div className='item-dropdown profile-dropdown'>
                               <div className="dropdown" onClick={closeMenu2}>
                               <div className="pt-3 "><span className="text-white">{user?.displayName}</span> </div>
                               <NavLink to="/create" className="py-3" style={{border: "1px solid red !important"}}>Edit Profile</NavLink>

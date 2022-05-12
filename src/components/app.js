@@ -19,6 +19,7 @@ import { createGlobalStyle } from 'styled-components';
 import Activity from './pages/activity';
 import AuthProvider from './../context/AuthProvider';
 import Author from './pages/Author';
+import NotFound from './pages/notfound';
 
 
 const GlobalStyles = createGlobalStyle`
@@ -73,7 +74,9 @@ const app= () => (
             <Create3 path="/create3" />
             <Createoption path="/createOptions" />
             <Activity path="/activity" />
-            <Author path="/maruf" />
+            <Author path="/author" />
+            {/* <NotFound default /> */}
+            <NotFound path="/*" />
             </ScrollTop>
           </PosedRouter>
       <ScrollToTopBtn /> 

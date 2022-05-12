@@ -44,13 +44,13 @@ const slidermain= () => (
               <div className="spacer-10"></div>
               <div className='d-flex'>
                 <Reveal className='onStep' keyframes={fadeInUp} delay={800} duration={900} triggerOnce>
-                  <Link to="/createOptions">
+                  <Link to="/#">
                       <span className="btn-main lead me-3">Create</span>
                   </Link>              
                 <div className="mb-sm-30"></div>
                 </Reveal>
                 <Reveal className='onStep' keyframes={fadeInUp} delay={800} duration={900} triggerOnce>
-                <Link to="/create">
+                <Link to="/#">
                     <span className="btn-main lead">Explore</span>
                 </Link>              
               <div className="mb-sm-30"></div>

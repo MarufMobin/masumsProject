@@ -77,22 +77,24 @@ render() {
           <div className="col-lg-7 offset-lg-1 mb-5">
               <form id="form-create-item" className="form-border" action="#">
                   <div className="field-set">
+                    {/* Tab */}
                       <div className="">
-                        <button className="btn btn-primary">
+                        <button className="profileBtn">
                             <i className="fa fa-user" aria-hidden="true"></i>
-                            profile
+                           <span className="icon-space">profile</span>
                         </button>
-                        <button className="btn btn-primary mx-3">
+                        <button className="profileBtn mx-3">
                         <i className="fa fa-exclamation" aria-hidden="true"></i>
-                          Notification
+                          <span className="icon-space">Notification</span>
                         </button>
-                        <button className="btn btn-primary">
+                        <button className="profileBtn">
                         <i className="fa fa-paint-brush" aria-hidden="true"></i>
-                          Apparance
+                          <span className="icon-space">Apparance</span>
                         </button>
                       </div>
-                      <div className="spacer-single"></div>
 
+                      {/* Edit field */}
+                      <div className="spacer-single"></div>
                       <h5>Username</h5>
                       <input type="text" name="item_title" id="item_title" className="form-control" placeholder="Enter Username" />
 
@@ -112,15 +114,18 @@ render() {
                       <input type="text" name="item_royalties" id="item_royalties" className="form-control" placeholder="Enter Email" />
 
                       <h5><i className="fa fa-link" aria-hidden="true"></i>
-                            Your site</h5>
+                          <span className="icon-space">Your site</span>
+                            </h5>
                       <input type="text" name="item_royalties" id="item_royalties" className="form-control" placeholder="Enter Website URL" />
 
                       <h5><i className="fa fa-twitter" aria-hidden="true"></i>
-                                Twitter Username</h5>
+                          <span className="icon-space">Twitter Username</span>
+                                </h5>
                       <input type="text" name="item_royalties" id="item_royalties" className="form-control" placeholder="Enter Twitter Username" />
 
                       <h5><i className="fa fa-instagram" aria-hidden="true"></i>
-                            Instragram Username</h5>
+                          <span className="icon-space">Instragram Username</span>
+                            </h5>
                       <input type="text" name="item_royalties" id="item_royalties" className="form-control" placeholder="Enter Instragram Username" />
 
                       <div className="spacer-10"></div>
@@ -130,15 +135,18 @@ render() {
               </form>
           </div>
 
+          {/* Profile */}
           <div className="col-lg-3 col-sm-6 col-xs-12">
                   <div className="mb-5">
                       <h5 className="mb-2"><i className="fa fa-info-circle" aria-hidden="true"></i>
-                            Profile image</h5>
+                            <span className="icon-space">Profile image</span>
+                            </h5>
                         <img src='./img/author/author-1.jpg' alt="" className="rounded-pill" />
                   </div>
                   <div>
                     <h5><i className="fa fa-info-circle" aria-hidden="true"></i>
-                      Profile Banner</h5>
+                      <span className="icon-space">Profile Banner</span>
+                      </h5>
                     <img src="./img/collections/coll-1.jpg" alt="" className="img-fluid" />
                   </div>
            </div>                                         

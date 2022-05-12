@@ -8,7 +8,6 @@
 }
 
 .custm-mini-button {
-    display: block;
     width: max-content;
     text-align: center;
     color: #000000 !important;
@@ -83,4 +82,38 @@ p {
 .cutom-p {
     color: #fff;
     margin-top: 8px;
+}
+
+// Edit profile page
+.form-control{
+    background-color: #fff!important;
+}
+.profileBtn{
+    text-align: center;
+    color: #000000 !important;
+    background: #03FFB3;
+    border-radius: 6px;
+    letter-spacing: normal;
+    outline: 0;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 8px 40px;
+    font-size: 14px;
+    border: none;
+    transition: all 0.3s ease;
+}
+.profileBtn:hover{
+    color: #000000 !important;
+    background: #03FFB3!important;
+}
+.icon-space{
+    margin-left: 5px;
+}
+// Header nav
+.line-none{
+    border-bottom: 0px!important;
+}
+.profile-dropdown{
+    position: absolute;
+    left: -120px!important;
 }
