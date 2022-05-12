@@ -240,8 +240,9 @@ const Header= function() {
                             {openMenu2 && (
                             <div className='item-dropdown'>
                               <div className="dropdown" onClick={closeMenu2}>
-                              <NavLink to="#" style={{borderBottom: "1px solid #03FFB3",borderRadius:"0px"}}><span style={{color: "#03FFB3"}}>{user?.displayName}</span> </NavLink>
-                              <NavLink to="/create">Edit Profile</NavLink>
+                              <div className="pt-3 "><span className="text-white">{user?.displayName}</span> </div>
+                              <NavLink to="/create" className="py-3" style={{border: "1px solid red !important"}}>Edit Profile</NavLink>
+                              <div to="#" onClick={logOut} className="pb-3 text-white">Sing Out</div>
                               </div>
                             </div>
                           )}
@@ -253,11 +254,11 @@ const Header= function() {
                                 <i style={{color:"#03FFB3"}} className="fa fa-user fs-4 me-3" onClick={logOut}></i>
                                 {/* <span style={{color: "#03FFB3"}}>{user?.displayName}</span> */}
                                 </span> }
-                      </div> : <div className='mainside'>
+                      </div> : 
                         <NavLink to="/login" className="custom-design">
                               <span className="custm-mini-button  lead">SING IN</span>
                         </NavLink>
-                      </div>}
+                      }
                     </div>
                   </div>
                 </Breakpoint>
