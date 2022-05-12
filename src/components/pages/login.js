@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../components/footer';
 import { createGlobalStyle } from 'styled-components';
-import { Link } from '@reach/router';
+import { Link, useNavigate } from '@reach/router';
 import { useState } from 'react';
 import useAuth from './../../context/useAuth';
 
@@ -37,11 +37,17 @@ const GlobalStyles = createGlobalStyle`
       color: #fff !important;
     }
 
+
   }
 `;
 
 const LoginTwo= () => {
-    const {  singInUsingGoogle ,singInUsingFacebook, logInuser } = useAuth();
+    const navigator = useNavigate()
+    const {  user,singInUsingGoogle ,singInUsingFacebook, logInuser } = useAuth();
+    console.log(user,"login ar user")
+    if( user.displayName ){
+      navigator('/')
+    }
     const [ email , setEmail ] = useState('');
     const [ password , setPassword ] = useState('');
     const handleContactForm = e =>{
@@ -107,4 +113,4 @@ const LoginTwo= () => {
 </div>
 
 )};
-export default LoginTwo;
+export default React.memo(LoginTwo);

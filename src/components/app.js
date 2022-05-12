@@ -74,9 +74,8 @@ const app= () => (
             <Create3 path="/create3" />
             <Createoption path="/createOptions" />
             <Activity path="/activity" />
-            <Author path="/author" />
-            {/* <NotFound default /> */}
-            <NotFound path="/*" />
+            <Author path="/author" />         
+            <NotFound default />
             </ScrollTop>
           </PosedRouter>
       <ScrollToTopBtn /> 

@@ -58,6 +58,7 @@ const useFirebase = () =>{
                 const user = userCredential.user;
                 updateUserInformation(userName)
                 setUser(user)
+                logInuser(email, password)
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -71,9 +72,8 @@ const useFirebase = () =>{
         const updateUserInformation = (name) =>{
             updateProfile(auth.currentUser, {
                 displayName: name
-              }).then(() => {
-                // Profile updated!
-                // ...
+              }).then( () => {
+    
               }).catch((error) => {
                 // An error occurred
                 // ...

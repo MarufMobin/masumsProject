@@ -43,8 +43,8 @@ const GlobalStyles = createGlobalStyle`
 
 
 const Register= () => {
-  
-  const { registerViaEmailandPassword } = useAuth()
+  const navigator = useNavigate()
+  const { registerViaEmailandPassword,user } = useAuth()
   const [ email, setEmail ] = useState("");
   const [ userName, setUserName ] = useState("");
   const [ password, setPassword ] = useState("");
@@ -52,7 +52,6 @@ const Register= () => {
   const handleFormSubmit = e =>{
       e.preventDefault();
       registerViaEmailandPassword(email,password,userName)
-    // console.log("yesssss", name, email, userName,phone,password,rePass,"conform")
   }
 
   const handleField = e =>{
@@ -67,6 +66,9 @@ const Register= () => {
       if( e.target.name == 'password'   ){
         setPassword(e.target.value)
       }
+  }
+  if( user.uid ){
+    navigator('/')
   }
   
 return (
