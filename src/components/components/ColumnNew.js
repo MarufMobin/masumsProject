@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Clock from "./Clock";
+import { Link } from '@reach/router';
 
 const Outer = styled.div`
   display: flex;
@@ -220,27 +221,35 @@ export default class Responsive extends Component {
                         </div>
                     }
                     <div className="author_list_pp">
-                        <span onClick={()=> window.open(nft.authorLink, "_self")}>                                    
-                            <img className="lazy" src={nft.authorImg} alt=""/>
+                        <span onClick={()=> window.open(nft.authorLink, "_self")}>  
+                            <Link to="/colection">
+                                <img className="lazy" src={nft.authorImg} alt=""/>
+                            </Link>                             
                             <i className="fa fa-check"></i>
                         </span>
                     </div>
                     <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                       <Outer>
                         <span>
-                            <img onLoad={this.onImgLoad} src={nft.previewImg} className="lazy nft__item_preview" alt=""/>
+                            <Link to="/nftdetails">
+                                <img onLoad={this.onImgLoad} src={nft.previewImg} className="lazy nft__item_preview" alt=""/>
+                            </Link>
                         </span>
                       </Outer>
                     </div>
                     <div className="nft__item_info">
                         <span onClick={()=> window.open(nft.nftLink, "_self")}>
+                        <Link to="/nftdetails">
                             <h4>{nft.title}</h4>
+                        </Link>
                         </span>
                         <div className="nft__item_price">
                             {nft.price}<span>{nft.bid}</span>
                         </div>
                         <div className="nft__item_action">
+                        <Link to="/nftdetails">
                             <span onClick={()=> window.open(nft.bidLink, "_self")}>Place a bid</span>
+                        </Link>    
                         </div>
                         <div className="nft__item_like">
                             <i className="fa fa-heart"></i><span>{nft.likes}</span>

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Clock from "./Clock";
+import { Link } from "@reach/router";
 
 const Outer = styled.div`
   display: flex;
@@ -102,29 +103,33 @@ export default class Responsive extends Component {
                   <div className="de_countdown">
                   <Clock deadline={this.state.deadline} />
                   </div>
-                  <div className="author_list_pp">
-                      <span onClick={()=> window.open("/home1", "_self")}>                                    
-                          <img className="lazy" src="./img/author/author-1.jpg" alt=""/>
-                          <i className="fa fa-check"></i>
-                      </span>
+                  <div className="author_list_pp">     
+                    <Link to="/colection">
+                        <img className="lazy" src="./img/author/author-1.jpg" alt=""/>
+                    </Link>                      
+                    <i className="fa fa-check"></i>
                   </div>
                   <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                     <Outer>
                       <span>
+                        <Link to="/nftdetails">
                           <img src="./img/items/static-1.jpg" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        </Link>
                       </span>
                     </Outer>
                   </div>
                   <div className="nft__item_info">
-                      <span onClick={()=> window.open("/#", "_self")}>
+                      <Link to="/nftdetails">
                           <h4>Pinky Ocean</h4>
-                      </span>
+                      </Link>
                       <div className="nft__item_price">
                           0.08 ETH<span>1/20</span>
                       </div>
                       <div className="nft__item_action">
-                          <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
-                      </div>
+                          <Link to="/nftdetails">
+                              <span>Place a bid</span>
+                          </Link>
+                        </div>
                       <div className="nft__item_like">
                           <i className="fa fa-heart"></i><span>50</span>
                       </div>                            
@@ -137,27 +142,31 @@ export default class Responsive extends Component {
               <div className="d-item">
                 <div className="nft__item">
                     <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
+                      <Link to="/colection">
                             <img className="lazy" src="./img/author/author-10.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
+                        </Link>    
+                          <i className="fa fa-check"></i>
                     </div>
                     <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                       <Outer>
                         <span>
+                          <Link to="/nftdetails">
                             <img src="./img/items/static-2.jpg" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                          </Link>
                         </span>
                       </Outer>
                     </div>
                     <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
+                        <Link to="/nftdetails">
                             <h4>Deep Sea Phantasy</h4>
-                        </span>
+                        </Link>
                         <div className="nft__item_price">
                             0.06 ETH<span>1/22</span>
                         </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
+                       <div className="nft__item_action">
+                          <Link to="/nftdetails">
+                              <span>Place a bid</span>
+                          </Link>
                         </div>
                         <div className="nft__item_like">
                             <i className="fa fa-heart"></i><span>80</span>
@@ -174,27 +183,31 @@ export default class Responsive extends Component {
                     <Clock deadline={this.state.deadline1} />
                     </div>
                     <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
+                        <Link to="/colection">
                             <img className="lazy" src="./img/author/author-11.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
+                        </Link>    
+                        <i className="fa fa-check"></i>
                     </div>
                     <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                       <Outer>
                         <span>
-                            <img src="./img//items/static-3.jpg" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        <Link to="/nftdetails">
+                          <img src="./img/items/static-3.jpg" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        </Link>
                         </span>
                       </Outer>
                     </div>
                     <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
+                        <Link to="/nftdetails">
                             <h4>Rainbow Style</h4>
-                        </span>
+                        </Link>
                         <div className="nft__item_price">
                             0.05 ETH<span>1/11</span>
                         </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
+                       <div className="nft__item_action">
+                          <Link to="/nftdetails">
+                              <span>Place a bid</span>
+                          </Link>
                         </div>
                         <div className="nft__item_like">
                             <i className="fa fa-heart"></i><span>97</span>
@@ -208,27 +221,32 @@ export default class Responsive extends Component {
             <div className="d-item">
                 <div className="nft__item">
                     <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-12.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
+                        <Link to="/colection">
+                              <img className="lazy" src="./img/author/author-12.jpg" alt=""/>
+                          </Link>      
+                          <i className="fa fa-check"></i>
                     </div>
                     <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                       <Outer>
                         <span>
-                            <img src="./img/items/static-4.jpg" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        <Link to="/nftdetails">
+                          <img src="./img/items/static-4.jpg" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        </Link>
                         </span>
                       </Outer>
                     </div>
                     <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>Two Tigers</h4>
-                        </span>
+                       <Link to="/nftdetails">
+                           <h4>Two Tigers</h4>
+                       </Link>
+                        
                         <div className="nft__item_price">
                             0.02 ETH<span>1/15</span>
                         </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
+                       <div className="nft__item_action">
+                          <Link to="/nftdetails">
+                              <span>Place a bid</span>
+                          </Link>
                         </div>
                         <div className="nft__item_like">
                             <i className="fa fa-heart"></i><span>73</span>
@@ -242,27 +260,31 @@ export default class Responsive extends Component {
             <div className="d-item">
                 <div className="nft__item">
                     <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
-                            <img className="lazy" src="./img/author/author-9.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
+                        <Link to="/colection">
+                              <img className="lazy" src="./img/author/author-9.jpg" alt=""/>
+                          </Link>         
+                          <i className="fa fa-check"></i>
                     </div>
                     <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                       <Outer>
                         <span>
+                        <Link to="/nftdetails">
                             <img src="./img/items/anim-4.webp" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        </Link>
                         </span>
                       </Outer>
                     </div>
                     <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
+                        <Link to="/nftdetails">
                             <h4>The Truth</h4>
-                        </span>
+                        </Link>
                         <div className="nft__item_price">
                             0.06 ETH<span>1/20</span>
                         </div>
-                        <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
+                       <div className="nft__item_action">
+                          <Link to="/nftdetails">
+                              <span>Place a bid</span>
+                          </Link>
                         </div>
                         <div className="nft__item_like">
                             <i className="fa fa-heart"></i><span>26</span>
@@ -279,27 +301,32 @@ export default class Responsive extends Component {
                       <Clock deadline={this.state.deadline2} />
                     </div>
                     <div className="author_list_pp">
-                        <span onClick={()=> window.open("/#", "_self")}>                                    
+                      <Link to="/colection">
                             <img className="lazy" src="./img/author/author-2.jpg" alt=""/>
-                            <i className="fa fa-check"></i>
-                        </span>
+                        </Link>       
+                        <i className="fa fa-check"></i>
                     </div>
                     <div className="nft__item_wrap" style={{height: `${this.state.height}px`}}>
                       <Outer>
                         <span>
+                        <Link to="/nftdetails">
                             <img src="./img/items/anim-2.webp" className="lazy nft__item_preview" onLoad={this.onImgLoad} alt=""/>
+                        </Link>
                         </span>
                       </Outer>
                     </div>
                     <div className="nft__item_info">
-                        <span onClick={()=> window.open("/#", "_self")}>
-                            <h4>Running Puppets</h4>
-                        </span>
+                          <Link to="/nftdetails">
+                              <h4>Running Puppets</h4>
+                          </Link>
+                        
                         <div className="nft__item_price">
                             0.03 ETH<span>1/24</span>
                         </div>    
                         <div className="nft__item_action">
-                            <span onClick={()=> window.open("/#", "_self")}>Place a bid</span>
+                          <Link to="/nftdetails">
+                              <span>Place a bid</span>
+                          </Link>
                         </div>
                         <div className="nft__item_like">
                             <i className="fa fa-heart"></i><span>45</span>

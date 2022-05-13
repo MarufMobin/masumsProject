@@ -42,6 +42,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const LoginTwo= () => {
+
     const navigator = useNavigate()
     const {  user,singInUsingGoogle ,singInUsingFacebook, logInuser } = useAuth();
     console.log(user,"login ar user")

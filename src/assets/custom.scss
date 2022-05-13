@@ -135,3 +135,37 @@ p {
     font-weight: 700;
     font-size: 18px;
 }
+
+//Custom modal are here
+.custm_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffffa8;
+    z-index: 111111111111111111!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custm_modal_body {
+    width: 25%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 0px auto;
+}
+
+.custm_modal_body h3 {
+    color: #000000!important;
+}
+
+.custm_modal_body .closebtn {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.custm_modal_field {
+    border: 2px solid red;
+}
