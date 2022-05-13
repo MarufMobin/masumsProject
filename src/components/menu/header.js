@@ -90,7 +90,7 @@ const Header= function() {
      <div className='container'>
        <div className='row w-100-nav'>
           <div className='logo px-0'>
-              <div className='navbar-title navbar-item'>
+              <div className='navbar-title navbar-item cursor-pointer'>
                 <NavLink to="/">
                 <img
                     src="./img/blocpod-logo.svg"

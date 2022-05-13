@@ -987,6 +987,7 @@ a {
             border-bottom: none;
             a {
                 padding: 0;
+                cursor: pointer;
                 .d-3 {
                     display: none;
                 }
@@ -3010,7 +3011,6 @@ i.font60 {
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     margin-bottom: 25px;
-    /* background: #ffffff; */
     transition: 0.7s;
     cursor: pointer;
     &:hover {
@@ -3647,7 +3647,7 @@ i.font60 {
             display: block;
             background: #f6f6f6;
             text-decoration: none;
-            color: $color;
+            color: $black;
             font-size: 15px;
             cursor: poInter;
             -webkit-border-radius: 3px;
@@ -3661,7 +3661,7 @@ i.font60 {
             }
         }
         &.active span {
-            color: $black;
+            color: $white;
             background: $color_more;
         }
     }

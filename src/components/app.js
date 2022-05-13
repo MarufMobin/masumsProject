@@ -64,7 +64,7 @@ const app= () => (
             <Explore path="/explore" />
             <Rangking path="/rangking" />
             <Auction path="/auction" />
-            <Colection path="/author" />
+            <Colection path="/colection" />
             <ItemDetail path="/nftdetails" />
             <Wallet path="/wallet" />
             <Login path="/login" />
@@ -74,7 +74,7 @@ const app= () => (
             <Create3 path="/create3" />
             <Createoption path="/createOptions" />
             <Activity path="/activity" />
-            <Author path="/author" />         
+            {/* <Author path="/author" />          */}
             <NotFound default />
             </ScrollTop>
           </PosedRouter>
