@@ -803,8 +803,8 @@ a {
     &::before {
         content: '';
         position: absolute;
-        top: -10px;
-        left: 19px;
+        // top: -10px;
+        // left: 19px;
         width: max-content;
         height: auto;
         padding: 30px 40px;
@@ -3798,10 +3798,12 @@ img.img-rounded {
         border-radius: 8px;
     }
 }
-.box-url h4{
+
+.box-url h4 {
     color: #000!important;
 }
-.box-url p{
+
+.box-url p {
     color: #000!important;
 }
 

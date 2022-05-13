@@ -32,6 +32,7 @@ const GlobalStyles = createGlobalStyle`
     .item-dropdown .dropdown a{
       color: #fff !important;
     }
+
   }
 `;
 
@@ -52,8 +53,9 @@ constructor() {
     console.log(filesArr);
     document.getElementById("file_name").style.display = "none";
     this.setState({ files: [...this.state.files, ...filesArr] });
-  }
 
+  }
+  
 render() {
     return (
       <div>
@@ -141,7 +143,7 @@ render() {
                       <h5 className="mb-2"><i className="fa fa-info-circle" aria-hidden="true"></i>
                             <span className="icon-space">Profile image</span>
                             </h5>
-                        <img src='./img/author/author-1.jpg' alt="" className="rounded-pill" />
+                        <img src="./img/author/author-1.jpg" alt="" className="rounded-pill" />
                   </div>
                   <div>
                     <h5><i className="fa fa-info-circle" aria-hidden="true"></i>

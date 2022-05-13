@@ -168,7 +168,7 @@ const Header= function() {
                         </NavLink>
                     </div>
                     <div className='mainside'>
-                      <span className="custm-mini-button  lead ">SING IN</span>
+                      <span className="custm-mini-button  lead ">SIGN IN</span>
                    </div>
                   </div>
                   
@@ -232,31 +232,47 @@ const Header= function() {
                       <div className='mainside d-flex'>
                           { user?.photoURL ?
                             <span>
-                              <div ref={ref2}>
-                          <div className="dropdown-custom btn" 
+                                <div ref={ref2}>
+                                  <div className="dropdown-custom btn" 
                              onMouseEnter={handleBtnClick2} onMouseLeave={closeMenu2}>
                                     <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%", marginTop:'-5px'}} className="cursor-pointer" alt="" /> 
-                            <span className='lines line-none'></span>
-                            {openMenu2 && (
-                            <div className='item-dropdown profile-dropdown'>
-                              <div className="dropdown" onClick={closeMenu2}>
-                              <div className="pt-3 "><span className="text-white">{user?.displayName}</span> </div>
-                              <NavLink to="/create" className="py-3" style={{border: "1px solid red !important"}}>Edit Profile</NavLink>
-                              <div to="#" onClick={logOut} className="pb-3 text-white">Sing Out</div>
-                              </div>
-                            </div>
-                          )}
-                          </div>
-                          
-                        </div>
+                                      <span className='lines line-none'></span>
+                                      {openMenu2 && (
+                                      <div className='item-dropdown profile-dropdown'>
+                                        <div className="dropdown" onClick={closeMenu2}>
+                                        <div className="pt-3 "><span className="text-white">{user?.displayName}</span> </div>
+                                        <NavLink to="/create" className="py-3" style={{border: "1px solid red !important"}}>Edit Profile</NavLink>
+                                        <div to="#" onClick={logOut} className="pb-3 text-white">Sign Out</div>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                </div>
                               
                               </span> : <span>
-                                <i style={{color:"#03FFB3"}} className="fa fa-user fs-4 me-3" onClick={logOut}></i>
+                                <div ref={ref2}>
+                                    <div className="dropdown-custom btn" 
+                              onMouseEnter={handleBtnClick2} onMouseLeave={closeMenu2}>
+                                       <i style={{color:"#03FFB3"}} className="fa fa-user fs-4 me-3 d-block">
+                                </i>  
+                                    <span className='lines line-none'></span>
+                                    {openMenu2 && (
+                                    <div className='item-dropdown profile-dropdown'>
+                                      <div className="dropdown" onClick={closeMenu2}>
+                                      <div className="pt-3 "><span className="text-white">{user?.displayName}</span> </div>
+                                      <NavLink to="/create" className="py-3" style={{border: "1px solid red !important"}}>Edit Profile</NavLink>
+                                      <div to="#" onClick={logOut} className="pb-3 text-white">Sign Out</div>
+                                      </div>
+                                    </div>
+                                  )}
+                                    </div>
+                                  </div>
+
                                 {/* <span style={{color: "#03FFB3"}}>{user?.displayName}</span> */}
                                 </span> }
                       </div> : 
                         <NavLink to="/login" className="custom-design">
-                              <span className="custm-mini-button  lead">SING IN</span>
+                              <span className="custm-mini-button  lead">SIGN IN</span>
                         </NavLink>
                       }
                     </div>

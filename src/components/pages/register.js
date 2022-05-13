@@ -68,7 +68,7 @@ const Register= () => {
       }
   }
   if( user.uid ){
-    navigator('/')
+    navigator('/create')
   }
   
 return (
