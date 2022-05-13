@@ -63,7 +63,7 @@ const Register= () => {
       }
   }
   const handlePassField = e =>{
-      if( e.target.name == 'password'   ){
+      if( e.target.name === 'password'   ){
         setPassword(e.target.value)
       }
   }

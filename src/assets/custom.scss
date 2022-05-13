@@ -85,10 +85,11 @@ p {
 }
 
 // Edit profile page
-.form-control{
+.form-control {
     background-color: #fff!important;
 }
-.profileBtn{
+
+.profileBtn {
     text-align: center;
     color: #000000 !important;
     background: #03FFB3;
@@ -102,18 +103,35 @@ p {
     border: none;
     transition: all 0.3s ease;
 }
-.profileBtn:hover{
+
+.profileBtn:hover {
     color: #000000 !important;
     background: #03FFB3!important;
 }
-.icon-space{
+
+.icon-space {
     margin-left: 5px;
 }
+
 // Header nav
-.line-none{
+.line-none {
     border-bottom: 0px!important;
 }
-.profile-dropdown{
+
+.profile-dropdown {
     position: absolute;
     left: -120px!important;
+}
+
+//password field set icon related work
+.onoff-icon {
+    display: flex;
+}
+
+.onoff-icon .fa {
+    position: absolute;
+    margin-left: -26px;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 18px;
 }

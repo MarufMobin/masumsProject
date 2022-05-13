@@ -60,7 +60,13 @@ const LoginTwo= () => {
     const handlePasswordField = e =>{
       setPassword(e.target.value)
     }
-    
+
+    //Show Password and hide password 
+    const [ showIcon, setShowIcon ] = useState(true);
+    const passwordIcon = () =>{
+      setShowIcon(!showIcon)
+    }
+
   return ( <div>
 <GlobalStyles/>
 
@@ -80,14 +86,20 @@ const LoginTwo= () => {
               <form name="contactForm" id='contact_form' className="form-border" action='#' onSubmit={handleContactForm} >
                   <div className="field-set">
            
-                      <input type='text' name='email' id='email' className="form-control" placeholder="username" onBlur={handleEmailField}  />
+                      <input type='text' name='email' id='email' className="form-control" placeholder="Use your email" onBlur={handleEmailField}  />
              
                   </div>
                 
-                 <div className="field-set">
-                      <input type='password' name='password' id='password' className="form-control" placeholder="password"  autoComplete="off" onBlur={handlePasswordField}   /> 
-                      
+                 <div className="field-set onoff-icon ">
+                      <input type={showIcon ? `password` : `text`} name='password' id='password' className="form-control" placeholder="Password"  autoComplete="off" onBlur={handlePasswordField}   /> 
+
+                    <span >
+                       {  showIcon ?
+                          <i className="fa fa-eye-slash cursor-pointer" aria-hidden="true" onClick={passwordIcon}></i> :  <i className="fa fa-eye cursor-pointer" aria-hidden="true" onClick={passwordIcon}></i>}
+                    </span>
+
                   </div>
+                  
                 
                 <div className="field-set">
                   <input type='submit' id='send_message' value='Submit' className="btn btn-main btn-fullwidth color-2"/>

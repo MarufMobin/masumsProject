@@ -32,7 +32,7 @@ const useFirebase = () =>{
                     setUser(user);
                 }
             })
-        },[])
+        },[auth])
 
         // Log Out 
         const logOut = () =>{
@@ -61,7 +61,7 @@ const useFirebase = () =>{
                 logInuser(email, password)
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
                 setError(errorMessage);
                 // ..
@@ -89,8 +89,9 @@ const useFirebase = () =>{
                 setUser(user)
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
+                console.log(errorMessage)
             });
         }
         return {

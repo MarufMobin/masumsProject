@@ -1,8 +1,6 @@
 import React from 'react';
 import useAuth from './../../context/useAuth';
 import { useNavigate } from '@reach/router';
-import { useState } from 'react';
-
 
 const Wallet= () => {
     //Routing
@@ -10,7 +8,7 @@ const Wallet= () => {
     const {user} = useAuth()
     const handleWallet = () =>{
         if( user.uid ){
-            alert("Congratulation You are get A Wallate");
+            alert("Congratulation! You are getting A Wallet");
         }else{
             navigator('/login')
         }

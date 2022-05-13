@@ -235,7 +235,7 @@ const Header= function() {
                               <div ref={ref2}>
                           <div className="dropdown-custom btn" 
                              onMouseEnter={handleBtnClick2} onMouseLeave={closeMenu2}>
-                                    <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%", marginTop:'-5px'}} className="cursor-pointer" /> 
+                                    <img src={user?.photoURL} style={{width: "35px", height: "35px", borderRadius: "50%", marginTop:'-5px'}} className="cursor-pointer" alt="" /> 
                             <span className='lines line-none'></span>
                             {openMenu2 && (
                             <div className='item-dropdown profile-dropdown'>
