@@ -1,18 +1,25 @@
 import React from 'react';
 import useAuth from './../../context/useAuth';
 import { useNavigate } from '@reach/router';
+import { useState } from 'react';
 
 const Wallet= () => {
     //Routing
+    const [ openMassage , setOpenMassage ] = useState(false)
+    const handleCongratulationModal = () =>{
+        setOpenMassage(!openMassage)
+    }
     const navigator = useNavigate()
     const {user} = useAuth()
     const handleWallet = () =>{
         if( user.uid ){
-            alert("Congratulation! You are getting A Wallet");
+            handleCongratulationModal()
         }else{
             navigator('/login')
         }
     }
+
+   
 return (
   <div className="row">
     <div className="col-lg-3 mb30">
@@ -79,7 +86,21 @@ return (
             <h4>Torus</h4>
             <p>Open source protocol for connecting decentralised applications to mobile wallets.</p>
         </span>
-    </div>                                  
+    </div>    
+    {
+        <div className={openMassage ? `custm_modal d-block`: `d-none`}>
+            <div className='custm_modal_body p-3'>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <h3 className='m-0'>Place a Bid </h3> 
+                    <span className='closebtn' onClick={handleCongratulationModal} style={{cursor:"pointer"}}>&times;</span>
+                </div>
+               <h4 className='text-black'>Congratulation ! you earn a Wallete</h4>
+                <div>
+                    <button className='w-100'>Place a bid</button>
+                </div>
+            </div>
+        </div>
+    }                              
 </div>
 )};
 export default Wallet;

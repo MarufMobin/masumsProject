@@ -14,7 +14,7 @@ import Register from './pages/register';
 import Create from './pages/create';
 import Create2 from './pages/create2';
 import Create3 from './pages/create3';
-import Createoption from './pages/createOptions';
+import Createoption from './pages/createoptions';
 import { createGlobalStyle } from 'styled-components';
 import Activity from './pages/activity';
 import AuthProvider from './../context/AuthProvider';
@@ -70,9 +70,9 @@ const app= () => (
             <Login path="/login" />
             <Register path="/register" />
             <Create path="/create" />
-            <Create2 path="/create2" />
-            <Create3 path="/create3" />
-            <Createoption path="/createOptions" />
+            <Create2 path="/single" />
+            <Create3 path="/multiple" />
+            <Createoption path="/createoption" />
             <Activity path="/activity" />
             <NotFound default />
             </ScrollTop>
